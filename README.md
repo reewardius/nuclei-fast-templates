@@ -1,0 +1,1 @@
+# nuclei-fast-templates
