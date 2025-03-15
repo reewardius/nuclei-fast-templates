@@ -15,6 +15,7 @@ nuclei -l resolved -etags fuzzing-rce,fuzzing-redirect,fuzzing-xxe,fuzzing-lfi,f
 ```
 
 **Web Cache Poisoning Templates**
+
 It is better to run cache and backup templates separately, as they significantly increase the scan time.
 ```
 nuclei -l resolved -tags cache
