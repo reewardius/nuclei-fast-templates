@@ -11,5 +11,7 @@ nuclei -l dedupe.txt -tags fuzzing-rce,fuzzing-redirect,fuzzing-xxe,fuzzing-lfi,
 ```
 subfinder -dL root.txt -all -silent -o subdomains.txt
 dnsx -l subdomains -silent -o resolved
-nuclei -l resolved -etags fuzzing-rce,fuzzing-redirect,fuzzing-xxe,fuzzing-lfi,fuzzing-xss,fuzzing-ssrf,fuzzing-ssti
+nuclei -l resolved -etags fuzzing-rce,fuzzing-redirect,fuzzing-xxe,fuzzing-lfi,fuzzing-xss,fuzzing-ssrf,fuzzing-ssti,cache,backup
 ```
+
+**Templates
