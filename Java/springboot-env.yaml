@@ -1,0 +1,57 @@
+id: springboot-env
+
+info:
+  name: Springboot Env Actuator - Detect
+  author: reewardius
+  severity: low
+  description: Sensitive environment variables may not be masked
+  tags: env,generic
+  
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/env"
+      - "{{BaseURL}}/;/env"
+      - "{{BaseURL}}/../env"
+      - "{{BaseURL}}/..;/env"
+      - "{{BaseURL}}/env;"
+      - "{{BaseURL}}/////env"
+      - "{{BaseURL}}/env..;/"
+      - "{{BaseURL}}///env"
+      - "{{BaseURL}}/%2e/env"
+      - "{{BaseURL}}/actuator/env"
+      - "{{BaseURL}}/actuator%2Fenv"
+      - "{{BaseURL}}%2Factuator%2Fenv"
+      - "{{BaseURL}}/actuator;/env;"
+      - "{{BaseURL}}/actuator/env..;/"
+      - "{{BaseURL}}/actuator/env;/"
+      
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "applicationConfig"
+          - "activeProfiles"
+        condition: or
+
+      - type: word
+        part: body
+        words:
+          - "server.port"
+          - "local.server.port"
+        condition: or
+
+      - type: word
+        part: header
+        words:
+          - "application/json"
+          - "application/vnd.spring-boot.actuator"
+          - "application/vnd.spring-boot.actuator.v1+json"
+          - "application/vnd.spring-boot.actuator.v2+json"
+        condition: or
+
+      - type: status
+        status:
+          - 200

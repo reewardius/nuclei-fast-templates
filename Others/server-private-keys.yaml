@@ -1,0 +1,153 @@
+id: server-private-keys
+
+info:
+  name: SSL/SSH/TLS/JWT Keys - Detect
+  author: geeknik,R12W4N
+  severity: high
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cwe-id: CWE-200
+  description: Private SSL, SSH, TLS, and JWT keys were detected.
+  tags: generic
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/%2e/.ssh/id_dsa"
+      - "{{BaseURL}}/%2e/.ssh/id_rsa"
+      - "{{BaseURL}}/%2e/cert/{{Host}}.txt"
+      - "{{BaseURL}}/%2e/cert/{{Host}}_key.txt"
+      - "{{BaseURL}}/%2e/cert/{{RDN}}_key.txt"
+      - "{{BaseURL}}/%2e/certificates/{{Host}}.p12"
+      - "{{BaseURL}}/%2e/certificates/{{Host}}.pfx"
+      - "{{BaseURL}}/%2e/certificates/{{Host}}_priv.pem"
+      - "{{BaseURL}}/%2e/certificates/{{Host}}_privkey.pem"
+      - "{{BaseURL}}/%2e/certs/{{Host}}.key"
+      - "{{BaseURL}}/%2e/certs/{{Host}}.pem"
+      - "{{BaseURL}}/%2e/certs/{{Host}}_private.key"
+      - "{{BaseURL}}/%2e/config/jwt/private.pem"
+      - "{{BaseURL}}/%2e/host.key"
+      - "{{BaseURL}}/%2e/id_dsa"
+      - "{{BaseURL}}/%2e/id_rsa"
+      - "{{BaseURL}}/%2e/jwt/private.pem"
+      - "{{BaseURL}}/%2e/key.pem"
+      - "{{BaseURL}}/%2e/keys/{{Host}}.pem"
+      - "{{BaseURL}}/%2e/localhost.key"
+      - "{{BaseURL}}/%2e/my.key"
+      - "{{BaseURL}}/%2e/private-key"
+      - "{{BaseURL}}/%2e/private.pem"
+      - "{{BaseURL}}/%2e/private/{{Host}}.key"
+      - "{{BaseURL}}/%2e/privatekey.key"
+      - "{{BaseURL}}/%2e/server.key"
+      - "{{BaseURL}}/%2e/ssl.txt"
+      - "{{BaseURL}}/%2e/ssl/localhost.key"
+      - "{{BaseURL}}/%2e/ssl/private/{{Host}}_key.pem"
+      - "{{BaseURL}}/%2e/ssl/{{Hostname}}.key"
+      - "{{BaseURL}}/%2e/ssl/{{Host}}.pem"
+      - "{{BaseURL}}/%2e/ssl/{{Host}}_key.txt"
+      - "{{BaseURL}}/%2e/ssl_key.txt"
+      - "{{BaseURL}}/%2e/var/jwt/private.pem"
+      - "{{BaseURL}}/%2e/www.key"
+      - "{{BaseURL}}/%2e/{{Hostname}}.key"
+      - "{{BaseURL}}/%2e/{{Hostname}}.pem"
+      - "{{BaseURL}}/..;/.ssh/id_dsa"
+      - "{{BaseURL}}/..;/.ssh/id_rsa"
+      - "{{BaseURL}}/..;/cert/{{Host}}.txt"
+      - "{{BaseURL}}/..;/cert/{{Host}}_key.txt"
+      - "{{BaseURL}}/..;/cert/{{RDN}}_key.txt"
+      - "{{BaseURL}}/..;/certificates/{{Host}}.p12"
+      - "{{BaseURL}}/..;/certificates/{{Host}}.pfx"
+      - "{{BaseURL}}/..;/certificates/{{Host}}_priv.pem"
+      - "{{BaseURL}}/..;/certificates/{{Host}}_privkey.pem"
+      - "{{BaseURL}}/..;/certs/{{Host}}.key"
+      - "{{BaseURL}}/..;/certs/{{Host}}.pem"
+      - "{{BaseURL}}/..;/certs/{{Host}}_private.key"
+      - "{{BaseURL}}/..;/config/jwt/private.pem"
+      - "{{BaseURL}}/..;/host.key"
+      - "{{BaseURL}}/..;/id_dsa"
+      - "{{BaseURL}}/..;/id_rsa"
+      - "{{BaseURL}}/..;/jwt/private.pem"
+      - "{{BaseURL}}/..;/key.pem"
+      - "{{BaseURL}}/..;/keys/{{Host}}.pem"
+      - "{{BaseURL}}/..;/localhost.key"
+      - "{{BaseURL}}/..;/my.key"
+      - "{{BaseURL}}/..;/private-key"
+      - "{{BaseURL}}/..;/private.pem"
+      - "{{BaseURL}}/..;/private/{{Host}}.key"
+      - "{{BaseURL}}/..;/privatekey.key"
+      - "{{BaseURL}}/..;/server.key"
+      - "{{BaseURL}}/..;/ssl.txt"
+      - "{{BaseURL}}/..;/ssl/localhost.key"
+      - "{{BaseURL}}/..;/ssl/private/{{Host}}_key.pem"
+      - "{{BaseURL}}/..;/ssl/{{Hostname}}.key"
+      - "{{BaseURL}}/..;/ssl/{{Host}}.pem"
+      - "{{BaseURL}}/..;/ssl/{{Host}}_key.txt"
+      - "{{BaseURL}}/..;/ssl_key.txt"
+      - "{{BaseURL}}/..;/var/jwt/private.pem"
+      - "{{BaseURL}}/..;/www.key"
+      - "{{BaseURL}}/..;/{{Hostname}}.key"
+      - "{{BaseURL}}/..;/{{Hostname}}.pem"
+      - "{{BaseURL}}/.ssh/id_dsa"
+      - "{{BaseURL}}/.ssh/id_rsa"
+      - "{{BaseURL}}/cert/{{Host}}.txt"
+      - "{{BaseURL}}/cert/{{Host}}_key.txt"
+      - "{{BaseURL}}/cert/{{RDN}}_key.txt"
+      - "{{BaseURL}}/certificates/{{Host}}.p12"
+      - "{{BaseURL}}/certificates/{{Host}}.pfx"
+      - "{{BaseURL}}/certificates/{{Host}}_priv.pem"
+      - "{{BaseURL}}/certificates/{{Host}}_privkey.pem"
+      - "{{BaseURL}}/certs/{{Host}}.key"
+      - "{{BaseURL}}/certs/{{Host}}.pem"
+      - "{{BaseURL}}/certs/{{Host}}_private.key"
+      - "{{BaseURL}}/config/jwt/private.pem"
+      - "{{BaseURL}}/host.key"
+      - "{{BaseURL}}/id_dsa"
+      - "{{BaseURL}}/id_rsa"
+      - "{{BaseURL}}/jwt/private.pem"
+      - "{{BaseURL}}/key.pem"
+      - "{{BaseURL}}/keys/{{Host}}.pem"
+      - "{{BaseURL}}/localhost.key"
+      - "{{BaseURL}}/my.key"
+      - "{{BaseURL}}/private-key"
+      - "{{BaseURL}}/private.pem"
+      - "{{BaseURL}}/private/{{Host}}.key"
+      - "{{BaseURL}}/privatekey.key"
+      - "{{BaseURL}}/server.key"
+      - "{{BaseURL}}/ssl.txt"
+      - "{{BaseURL}}/ssl/localhost.key"
+      - "{{BaseURL}}/ssl/private/{{Host}}_key.pem"
+      - "{{BaseURL}}/ssl/{{Hostname}}.key"
+      - "{{BaseURL}}/ssl/{{Host}}.pem"
+      - "{{BaseURL}}/ssl/{{Host}}_key.txt"
+      - "{{BaseURL}}/ssl_key.txt"
+      - "{{BaseURL}}/var/jwt/private.pem"
+      - "{{BaseURL}}/www.key"
+      - "{{BaseURL}}/{{Hostname}}.key"
+      - "{{BaseURL}}/{{Hostname}}.pem"
+      
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "BEGIN OPENSSH PRIVATE KEY"
+          - "BEGIN PRIVATE KEY"
+          - "BEGIN RSA PRIVATE KEY"
+          - "BEGIN DSA PRIVATE KEY"
+          - "BEGIN EC PRIVATE KEY"
+          - "BEGIN PGP PRIVATE KEY BLOCK"
+          - "BEGIN ENCRYPTED PRIVATE KEY"
+        condition: or
+
+      - type: status
+        status:
+          - 200
+
+      - type: dsl
+        dsl:
+          - '!contains(body_2, "<html")'
+          - '!contains(body_2, "<HTML")'
+        condition: and
+
+# Enhanced by cs on 2023/03/02

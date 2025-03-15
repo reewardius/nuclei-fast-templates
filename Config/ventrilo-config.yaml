@@ -1,0 +1,43 @@
+id: ventrilo-config
+
+info:
+  name: Ventrilo Configuration File
+  author: geeknik
+  severity: high
+  tags: generic
+  metadata:
+    max-request: 2
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/ventrilo_srv.ini"
+      - "{{BaseURL}}/.ventrilo_srv.ini"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "[Server]"
+          - "Name"
+          - "Phonetic"
+        condition: and
+
+      - type: word
+        part: header
+        words:
+          - "text/plain"
+          - "bytes"
+        condition: or
+        
+      - type: word
+        part: header
+        words:
+          - "text/html"
+        negative: true
+        
+      - type: status
+        status:
+          - 200
+          - 206
+        condition: or

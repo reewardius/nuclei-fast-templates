@@ -1,0 +1,23 @@
+id: travis-ci
+
+info:
+  name: Travis CI Detect
+  author: reewardius
+  severity: medium
+  tags: cloud,generic
+  
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/.travis.yml"
+      - "{{BaseURL}}/%2Etravis.yml"
+      - "{{BaseURL}}/.travis.yaml"
+      
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "jobs:"
+          - "stage:"
+          - "script:"
+        condition: and

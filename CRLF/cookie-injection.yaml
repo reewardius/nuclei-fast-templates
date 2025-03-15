@@ -1,0 +1,36 @@
+id: cookie-injection
+
+info:
+  name: Parameter based cookie injection
+  author: reewardius
+  severity: medium
+  reference:
+    - https://book.hacktricks.xyz/pentesting-web/crlf-0d-0a
+    - https://github.com/r0075h3ll/Oralyzer/blob/master/core/crlf.py
+    - https://infosecwriteups.com/6000-with-microsoft-hall-of-fame-microsoft-firewall-bypass-crlf-to-xss-microsoft-bug-bounty-8f6615c47922
+  tags: fuzzing-crlf
+
+variables:
+  first: "cookie_injection"
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    payloads:
+      reflection:
+        - "{{first}}"
+
+    fuzzing:
+      - part: query
+        type: replace
+        mode: single
+        fuzz:
+          - "{{reflection}}"
+
+    matchers:
+      - type: regex
+        part: header
+        regex:
+          - '(?m)(?i)(^set-cookie.*cookie_injection.*)'

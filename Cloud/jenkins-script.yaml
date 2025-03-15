@@ -1,0 +1,37 @@
+id: jenkins-script
+
+info:
+  name: Jenkins - Remote Code Execution
+  author: philippedelteil
+  severity: critical
+  description: |
+    Jenkins is susceptible to a remote code execution vulnerability due to accessible script functionality.
+  reference:
+    - https://hackerone.com/reports/403402
+    - https://rohit-soni.medium.com/chaining-multiple-vulnerabilities-leads-to-remote-code-execution-rce-on-paytm-e77f2fd2295e
+  tags: jenkins,cloud,generic
+    
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/script/"
+      - "{{BaseURL}}/jenkins/script/"
+      
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "println(Jenkins.instance.pluginManager.plugins)"
+          
+      - type: word
+        part: body
+        words:
+          - "Script Console"
+          - "Scriptconsole"
+        condition: or
+        
+      - type: status
+        status:
+          - 200

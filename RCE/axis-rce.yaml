@@ -1,0 +1,24 @@
+id: axis-rce
+
+info:
+  name: AXIS 1.4 RCE
+  author: reewardius
+  severity: critical
+  tags: rce
+  metadata:
+    max-request: 1
+  
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/axis/services/AdminService"
+      
+    stop-at-first-match: true
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "WSRP"
+          - "Version"
+          - "AdminService"
+        condition: and

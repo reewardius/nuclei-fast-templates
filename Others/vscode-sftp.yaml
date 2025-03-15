@@ -1,0 +1,28 @@
+id: vscode-sftp
+
+info:
+  name: VSCode SFTP
+  description: This template can be used to detect VSCode SFTP configuration exposed  files containing sensitive information.
+  author: reewardius
+  severity: critical
+  tags: generic
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/.vscode/sftp.json"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "name"
+          - "host"
+          - "password"
+          - "DB_PASS"
+          - "DB_HOST"
+        condition: and
+        part: body
+      - type: status
+        status:
+          - 200

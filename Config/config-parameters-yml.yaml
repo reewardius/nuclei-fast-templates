@@ -1,0 +1,89 @@
+id: config-parameters-yml
+
+info:
+  name: DataBase Configuration Check
+  author: reewardius
+  severity: high
+  description: Check for common database configuration keys.
+  tags: config-files
+  
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/.parameters.yml"
+      - "{{BaseURL}}/app/config/parameters.yml"
+      - "{{BaseURL}}/app/parameters.yml"
+      - "{{BaseURL}}/build.parameters.yml"
+      - "{{BaseURL}}/cd/parameters.yml"
+      - "{{BaseURL}}/ci/parameters.yml"
+      - "{{BaseURL}}/cicd/parameters.yml"
+      - "{{BaseURL}}/conf/parameters.yml"
+      - "{{BaseURL}}/config/example.parameters.yml"
+      - "{{BaseURL}}/config/old.parameters.yml"
+      - "{{BaseURL}}/config/parameters.1.yml"
+      - "{{BaseURL}}/config/parameters.2.yml"
+      - "{{BaseURL}}/config/parameters.3.yml"
+      - "{{BaseURL}}/config/parameters.yml"
+      - "{{BaseURL}}/config/parameters1.yml"
+      - "{{BaseURL}}/config/parameters2.yml"
+      - "{{BaseURL}}/config/parameters3.yml"
+      - "{{BaseURL}}/env.parameters.yml"
+      - "{{BaseURL}}/env/parameters.yml"
+      - "{{BaseURL}}/old.parameters.yml"
+      - "{{BaseURL}}/parameters.yml"
+      - "{{BaseURL}}/parameters.yml.example"
+      - "{{BaseURL}}/parameters.yml.old"
+      - "{{BaseURL}}/parameters.yml.sample"
+      
+    matchers-condition: or
+    matchers:
+      - type: word
+        words:
+          - "database_driver"
+          - "database_host"
+          - "database_port"
+          - "database_name"
+          - "database_password"
+        part: body
+        condition: and
+        
+      - type: word
+        words:
+          - "type:"
+          - "data:"
+          - "parameters:"
+        part: body
+        condition: and
+        
+      - type: word
+        words:
+          - "MAIL_HOST="
+          - "MAIL_FROM_ADDRESS="
+          - "MAIL_ENCRYPTION="
+        part: body
+        condition: or
+        
+      - type: regex
+        regex:
+          - "(?m)^APP_(NAME|ENV|KEY|DEBUG|URL|PASSWORD|SECRET)"
+          - "(?m)^DB_(HOST|PASSWORD|DATABASE|PASS)"
+          - "(?m)^AWS_(SESSION|LAMBDA|SECRET|REGION|ACCESS)"
+          - 'jdbc:[a-z:]+://[A-Za-z0-9\.\-_:;=/@?,&]+'
+          - '((?i)password|pwd|pass|secretkey|secret_key)='
+        condition: or
+        
+      - type: word
+        part: body
+        words:
+          - "USER"
+          - "PASS"
+          - "HOST"
+        condition: and
+
+      - type: word
+        part: body
+        words:
+          - "env"
+          - "debug"
+          - "variable"
+        condition: and

@@ -1,0 +1,23 @@
+id: x-cache-miss-detect
+
+info:
+  name: Cache Detect
+  author: reewardius
+  severity: info
+  tags: cache
+  metadata:
+    max-request: 1
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    stop-at-first-match: true
+    matchers:
+      - type: word
+        part: header
+        words:
+          - 'MISS'
+          - 'miss'
+        condition: or

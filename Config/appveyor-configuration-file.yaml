@@ -1,0 +1,62 @@
+id: appveyor-configuration-file
+
+info:
+  name: AppVeyor Configuration Page - Detect
+  author: DhiyaneshDk,reewardius
+  severity: medium
+  description: AppVeyor configuration page was detected.
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    cvss-score: 5.3
+    cwe-id: CWE-200
+  tags: generic
+  
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/.appveyor.yml"
+      - "{{BaseURL}}/.appveyor.yml.1"
+      - "{{BaseURL}}/.appveyor.yml.2"
+      - "{{BaseURL}}/.appveyor.yml.3"
+      - "{{BaseURL}}/.appveyor.yml.back"
+      - "{{BaseURL}}/.appveyor.yml.bak"
+      - "{{BaseURL}}/.appveyor.yml.cmake"
+      - "{{BaseURL}}/.appveyor.yml.old"
+      - "{{BaseURL}}/.appveyor.yml.orig"
+      - "{{BaseURL}}/.appveyor.yml.template"
+      - "{{BaseURL}}/.appveyor.yml.txt"
+      - "{{BaseURL}}/.appveyor.yml1"
+      - "{{BaseURL}}/.appveyor.yml2"
+      - "{{BaseURL}}/.appveyor.yml3"
+      - "{{BaseURL}}/;/.appveyor.yml"
+      - "{{BaseURL}}/;/appveyor.yml"
+      - "{{BaseURL}}/appveyor.yml"
+      - "{{BaseURL}}/appveyor.yml.1"
+      - "{{BaseURL}}/appveyor.yml.2"
+      - "{{BaseURL}}/appveyor.yml.3"
+      - "{{BaseURL}}/appveyor.yml.back"
+      - "{{BaseURL}}/appveyor.yml.bak"
+      - "{{BaseURL}}/appveyor.yml.cmake"
+      - "{{BaseURL}}/appveyor.yml.old"
+      - "{{BaseURL}}/appveyor.yml.orig"
+      - "{{BaseURL}}/appveyor.yml.template"
+      - "{{BaseURL}}/appveyor.yml.txt"
+      - "{{BaseURL}}/appveyor.yml1"
+      - "{{BaseURL}}/appveyor.yml2"
+      - "{{BaseURL}}/appveyor.yml3"
+      - "{{BaseURL}}/disabled.appveyor.yml"
+      - "{{BaseURL}}/old.appveyor.yml"
+      
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "install:"
+          - "test_script:"
+        condition: and
+        case-insensitive: true
+
+      - type: status
+        status:
+          - 200

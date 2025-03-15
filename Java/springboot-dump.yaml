@@ -1,0 +1,40 @@
+id: springboot-dump
+
+info:
+  name: Detect Springboot Dump Actuator
+  author: pussycat0x
+  severity: low
+  description: Performs a thread dump
+  tags: java,generic
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/dump"
+      - "{{BaseURL}}/actuator/dump"
+      - "{{BaseURL}}/..;/dump"
+      - "{{BaseURL}}/..;/actuator/dump"
+      - "{{BaseURL}}/%2e%2e/%2e%2e/dump"
+      - "{{BaseURL}}/%2e%2e/%2e%2e/actuator/dump"
+      - "{{BaseURL}}/%2e%2e/%2e%2e/%2e%2e/dump"
+      - "{{BaseURL}}/%2e%2e/%2e%2e/%2e%2e/actuator/dump"
+      - "{{BaseURL}}/%2e%2e/dump"
+      - "{{BaseURL}}/%2e%2e/actuator/dump"
+
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "threadName"
+          - "threadId"
+          - "waitedTime"
+          - "lockName"
+          - "stackTrace"
+          - "methodName"
+        condition: and
+
+      - type: status
+        status:
+          - 200

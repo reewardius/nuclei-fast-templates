@@ -1,0 +1,33 @@
+id: kubernetes-etcd-keys
+
+info:
+  name: Kubernetes etcd Keys Exposure
+  author: Hardik-Solanki
+  severity: medium
+  reference:
+    - https://github.com/maurosoria/dirsearch/blob/master/db/dicc.txt
+  metadata:
+    max-request: 3
+    verified: true
+    github-query: filename:apiserver-etcd-client.key
+  tags: kubernetes,k8s,cloud
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/apiserver-etcd-client.key"
+      - "{{BaseURL}}/api/v1/apiserver-etcd-client.key"
+      - "{{BaseURL}}/api/v2/apiserver-etcd-client.key"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'BEGIN RSA PRIVATE KEY'
+          - 'END RSA PRIVATE KEY'
+        condition: and
+
+      - type: status
+        status:
+          - 200

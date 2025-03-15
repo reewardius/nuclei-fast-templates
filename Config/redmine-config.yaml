@@ -1,0 +1,53 @@
+id: redmine-config
+
+info:
+  name: Redmine Configuration
+  author: DhiyaneshDK
+  severity: high
+  reference:
+    - https://www.exploit-db.com/ghdb/5803
+  metadata:
+    max-request: 3
+    verified: true
+    google-dork: intitle:"index of" configuration.yml
+  tags: generic
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/configuration.yml"
+      - "{{BaseURL}}/config/configuration.yml"
+      - "{{BaseURL}}/redmine/config/configuration.yml"
+      - "{{BaseURL}}/configuration.yaml"
+      - "{{BaseURL}}/config/configuration.yaml"
+      - "{{BaseURL}}/redmine/config/configuration.yaml"
+      - "{{BaseURL}}/configuration.yml.old"
+      - "{{BaseURL}}/config/configuration.yml.old"
+      - "{{BaseURL}}/redmine/config/configuration.yml.old"
+      - "{{BaseURL}}/configuration.yaml.old"
+      - "{{BaseURL}}/config/configuration.yaml.old"
+      - "{{BaseURL}}/redmine/config/configuration.yaml.old"
+      
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "user_name"
+          - "password"
+          - "Redmine"
+        condition: and
+        case-insensitive: true
+        
+      - type: word
+        part: header
+        words:
+          - "application/json"
+          - "text/html"
+        negative: true
+        condition: and
+        
+      - type: status
+        status:
+          - 200

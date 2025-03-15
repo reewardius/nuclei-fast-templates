@@ -1,0 +1,37 @@
+id: jolokia-list
+
+info:
+  name: Jolokia - List
+  author: pussycat0x
+  severity: low
+  reference:
+    - https://thinkloveshare.com/hacking/ssrf_to_rce_with_jolokia_and_mbeans/
+    - https://github.com/mpgn/Spring-Boot-Actuator-Exploit
+    - https://github.com/laluka/jolokia-exploitation-toolkit
+    - https://thinkloveshare.com/hacking/1001_ways_to_pwn_prod/
+    - https://github.com/reewardius/jolokia-rce/blob/main/rce
+    - https://ricterz.me/posts/2019-03-06-yet-another-way-to-exploit-spring-boot-actuators-via-jolokia.txt
+    - https://blog.it-securityguard.com/how-i-made-more-than-30k-with-jolokia-cves/
+    - https://thinkloveshare.com/hacking/shells_with_jolokia_exploitation_toolkit/
+  tags: java,jolokia,generic
+    
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/..%09/jolokia/list"
+      - "{{BaseURL}}/..;\\jolokia/list"
+      - "{{BaseURL}}/jolokia/list"
+      - "{{BaseURL}}/actuator/jolokia/list"
+      - "{{BaseURL}}/..%09/actuator/jolokia/list"
+      
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+          
+      - type: word
+        part: body
+        words:
+          - '"type":"list"'

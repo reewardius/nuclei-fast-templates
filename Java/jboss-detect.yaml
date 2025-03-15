@@ -1,0 +1,33 @@
+id: jboss-detect
+
+info:
+  name: JBoss detected
+  author: reewardius
+  severity: info
+  tags: java,jboss
+  metadata:
+    max-request: 1
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers-condition: or
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "JBoss EAP 7"
+
+      - type: regex
+        part: body
+        regex:
+          - '<title>Welcome to JBoss(.*)</title>'
+
+    extractors:
+      - type: regex
+        group: 1
+        part: body
+        regex:
+          - '<h1>Welcome to (.+)<\/h1>'

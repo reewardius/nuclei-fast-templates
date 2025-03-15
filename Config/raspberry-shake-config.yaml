@@ -1,0 +1,25 @@
+id: raspberry-shake-config
+
+info:
+  name: Raspberry Shake Config Detection
+  author: pussycat0x
+  severity: medium
+  tags: cloud
+  metadata:
+    max-request: 1
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "Raspberry Shake Config"
+
+      - type: status
+        status:
+          - 200

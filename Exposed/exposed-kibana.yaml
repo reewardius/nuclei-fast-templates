@@ -1,0 +1,31 @@
+id: exposed-kibana
+
+info:
+  name: Exposed Kibana
+  author: shine
+  severity: medium
+  tags: cloud,generic,exposed
+  reference: https://thinkloveshare.com/hacking/1001_ways_to_pwn_prod/png-30.png
+  metadata:
+    max-request: 2
+
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}'
+      - '{{BaseURL}}/app/kibana/'
+      - '{{BaseURL}}/kibana/'
+      
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'kibanaWelcomeView'
+          - 'cluster_uuid'
+          - 'kibanaWelcomeLogo'
+          - 'kibanaWelcomeTitle'
+          
+      - type: status
+        status:
+          - 200

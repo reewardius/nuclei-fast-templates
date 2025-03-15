@@ -1,0 +1,27 @@
+id: unauthenticated-jenkins
+
+info:
+  name: Unauthenticated Jenkins Dashboard
+  author: dhiyaneshDK
+  severity: high
+  tags: jenkins,cloud,generic
+  metadata:
+    max-request: 2
+    
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+      - "{{BaseURL}}/jenkins"
+      
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - Dashboard [Jenkins]
+        part: body
+        
+      - type: status
+        status:
+          - 200

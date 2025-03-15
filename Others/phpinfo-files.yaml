@@ -1,0 +1,78 @@
+id: phpinfo-files
+
+info:
+  name: PHPinfo Page - Detect
+  author: reewardius
+  severity: low
+  description: |
+    PHPinfo page was detected. The output of the phpinfo() command can reveal sensitive and detailed PHP environment information.
+  remediation: Remove PHP Info pages from publicly accessible sites, or restrict access to authorized users only.
+  tags: php,generic
+  
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/?phpinfo=1"
+      - "{{BaseURL}}/_profiler/phpinfo"
+      - "{{BaseURL}}/_profiler/phpinfo.php"
+      - "{{BaseURL}}/`<?php echo phpinfo(); ?>`"
+      - "{{BaseURL}}/asdf.php"
+      - "{{BaseURL}}/cgi-bin/i.php"
+      - "{{BaseURL}}/cgi-bin/info.php"
+      - "{{BaseURL}}/cgi-bin/phpinfo.php"
+      - "{{BaseURL}}/cgi-bin/test.php"
+      - "{{BaseURL}}/dashboard/i.php"
+      - "{{BaseURL}}/dashboard/info.php"
+      - "{{BaseURL}}/dashboard/phpinfo.php"
+      - "{{BaseURL}}/i.php"
+      - "{{BaseURL}}/i.php."
+      - "{{BaseURL}}/i.php/*"
+      - "{{BaseURL}}/i.php~"
+      - "{{BaseURL}}/index.php"
+      - "{{BaseURL}}/index.php?file=`<?php echo phpinfo(); ?>`"
+      - "{{BaseURL}}/info.php"
+      - "{{BaseURL}}/info.php."
+      - "{{BaseURL}}/info.php/*"
+      - "{{BaseURL}}/info.php~"
+      - "{{BaseURL}}/info/i.php"
+      - "{{BaseURL}}/infophp.php"
+      - "{{BaseURL}}/infos.php"
+      - "{{BaseURL}}/l.php?act=phpinfo"
+      - "{{BaseURL}}/linusadmin-phpinfo.php"
+      - "{{BaseURL}}/old_phpinfo.php"
+      - "{{BaseURL}}/php-info.php"
+      - "{{BaseURL}}/php.php"
+      - "{{BaseURL}}/php_info.php"
+      - "{{BaseURL}}/phpinfo.php"
+      - "{{BaseURL}}/phpinfo.php.old"
+      - "{{BaseURL}}/phpinfo.php1"
+      - "{{BaseURL}}/phpinfo.php~"
+      - "{{BaseURL}}/phpversion.php"
+      - "{{BaseURL}}/phpversion.php~"
+      - "{{BaseURL}}/pinfo.php"
+      - "{{BaseURL}}/pinfo.php~"
+      - "{{BaseURL}}/temp.php"
+      - "{{BaseURL}}/test.php"
+      - "{{BaseURL}}/test.php~"
+      - "{{BaseURL}}/time.php"
+      
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "PHP Extension"
+          - "PHP Version"
+        condition: and
+        
+      - type: status
+        status:
+          - 200
+          
+    extractors:
+      - type: regex
+        part: body
+        group: 1
+        regex:
+          - '>PHP Version <\/td><td class="v">([0-9.]+)'

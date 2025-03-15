@@ -1,0 +1,130 @@
+id: php-backup-files
+
+info:
+  name: PHP Source - Backup File Information Disclosure
+  author: reewardius
+  severity: medium
+  tags: config-files,backup
+  
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}{{filepath}}{{bakext}}"
+      
+    attack: clusterbomb
+    payloads:
+      filepath:
+        - /app/config.php
+        - /app/database.php
+        - /app/db.php
+        - /app/env.php
+        - /app/etc/env.php
+        - /caches/configs/database.php
+        - /caches/configs/system.php
+        - /class/config.php
+        - /common/config/main-local.php
+        - /config
+        - /config.inc.php
+        - /config.php
+        - /config/config.php
+        - /config/config_global.php
+        - /conn.php
+        - /connection.php
+        - /const.db
+        - /data.php
+        - /data/bbscache/config.php
+        - /data/common.inc.php
+        - /data/config.php
+        - /data/sql_config.php
+        - /database.php
+        - /db.php
+        - /db_config.php
+        - /default.php
+        - /env.php
+        - /environments/dev/common/config/main-local.php
+        - /environments/prod/common/config/main-local.php
+        - /footer.php
+        - /header.php
+        - /include/config.inc.php
+        - /include/config.php
+        - /includes/config
+        - /includes/config.php
+        - /index.php
+        - /installation/configuration.php
+        - /login.php
+        - /main.php
+        - /server.php
+        - /server/config/database.php
+        - /server/config/system.php
+        - /settings.php
+        - /site/default/settings.php
+        - /system.php
+        - /system/config/default.php
+        - /typo3conf/localconf.php
+        - /wp-config
+        - /wp-config.php
+        - /wp-login.php
+        
+      bakext:
+        - ".~"
+        - "_dev"
+        - "_prod"
+        - ".dev"
+        - ".prod"
+        - ".template"
+        - "_"
+        - ".bk"
+        - ".bak"
+        - ".bkp"
+        - ".bak"
+        - ".swp"
+        - ".swo"
+        - ".swn"
+        - ".tmp"
+        - ".save"
+        - ".old"
+        - ".new"
+        - ".orig"
+        - ".dist"
+        - ".txt"
+        - ".disabled"
+        - ".original"
+        - ".backup"
+        - "_bak"
+        - "_1.bak"
+        - "_2.bak"
+        - "_3.bak"
+        - "~"
+        - "!"
+        - "1"
+        - "2"
+        - "3"
+        - ".0"
+        - ".1"
+        - ".2"
+        - ".3"
+        
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        part: body
+        words:
+          - "<?php"
+          - "<?="
+        condition: or
+
+      - type: word
+        part: body
+        words:
+          - "$_GET["
+          - "$_POST["
+          - "$_REQUEST["
+          - "$_SERVER["
+          - "'DB_PASSWORD'"
+          - "DB_PASS"
+          - "define('DB_"
+        condition: or

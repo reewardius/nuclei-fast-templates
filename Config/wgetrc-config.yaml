@@ -1,0 +1,34 @@
+id: wgetrc-config
+
+info:
+  name: Wgetrc Configuration File Exposure
+  author: DhiyaneshDK
+  severity: medium
+  tags: config
+  metadata:
+    max-request: 4
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/wgetrc"
+      - "{{BaseURL}}/.wgetrc"
+      - "{{BaseURL}}/wgetrc.old"
+      - "{{BaseURL}}/.wgetrc.old"      
+      
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - '/etc/wgetrc'
+          - 'wget.info'
+
+      - type: word
+        part: header
+        words:
+          - 'application/octet-stream'
+
+      - type: status
+        status:
+          - 200

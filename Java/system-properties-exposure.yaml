@@ -1,0 +1,45 @@
+id: system-properties-exposure
+
+info:
+  name: System Properties Exposure
+  author: DhiyaneshDk
+  severity: low
+  metadata:
+    max-request: 1
+    verified: true
+    shodan-query: title:"System Properties"
+  tags: java,config,generic
+
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}'
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "System Properties:"
+          - "Environment Variables:"
+        condition: and
+        case-insensitive: true
+
+      - type: word
+        part: header
+        words:
+          - "text/plain"
+          - "bytes"
+        condition: or
+        
+      - type: word
+        part: header
+        words:
+          - "text/html"
+        negative: true
+        
+      - type: status
+        status:
+          - 200
+          - 206
+        condition: or

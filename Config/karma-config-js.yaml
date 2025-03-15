@@ -1,0 +1,28 @@
+id: karma-config-js
+
+info:
+  name: Karma Configuration File Exposure
+  author: DhiyaneshDk
+  severity: medium
+  tags: config-files
+  metadata:
+    max-request: 2
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/.config/karma.conf.js"
+      - "{{BaseURL}}/karma.conf.js"
+
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "// Karma configuration"
+          - "module.exports"
+        condition: and
+
+      - type: status
+        status:
+          - 200

@@ -1,0 +1,30 @@
+id: ssl-vhost
+
+info:
+  name: Flow + Iteration
+  author: pdteam
+  severity: info
+  tags: vhost
+
+flow:
+  ssl();
+  for (let vhost of iterate(template["ssl_domains"])) {
+    set("vhost", vhost);
+    http();
+  }
+
+ssl:
+  - address: "{{Host}}:{{Port}}"
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    headers:
+      Host: "{{vhost}}"
+
+    extractors:
+      - type: dsl
+        dsl:
+          - '"HOST: " + vhost + " | STATUS: "+ status_code + " | SIZE: " + content_length'

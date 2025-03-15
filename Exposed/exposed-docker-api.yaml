@@ -1,0 +1,33 @@
+id: exposed-docker-api
+
+info:
+  name: Exposed Docker API
+  author: furkansenan,dwisiswant0
+  severity: info
+  tags: docker,generic
+  metadata:
+    max-request: 2
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/version"
+      - "{{BaseURL}}/v1.24/version"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "application/json"
+        part: header
+        
+      - type: word
+        part: body
+        words:
+          - "KernelVersion"
+          - "BuildTime"
+        condition: and
+        
+      - type: status
+        status:
+          - 200

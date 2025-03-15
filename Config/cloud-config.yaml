@@ -1,0 +1,38 @@
+id: cloud-config
+
+info:
+  name: Cloud Config File Exposure
+  author: DhiyaneshDK,Hardik-Solanki
+  severity: medium
+  reference: https://www.exploit-db.com/ghdb/7959
+  metadata:
+    verified: true
+    shodan-query: html:"cloud-config.yml"
+  tags: generic
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/cloud-config.yml"
+      - "{{BaseURL}}/core-cloud-config.yml"
+      - "{{BaseURL}}/cloud-config.yaml"
+      - "{{BaseURL}}/core-cloud-config.yaml"
+      - "{{BaseURL}}/cloud-config.yml.old"
+      - "{{BaseURL}}/core-cloud-config.yml.old"
+      - "{{BaseURL}}/cloud-config.yaml.old"
+      - "{{BaseURL}}/core-cloud-config.yaml.old"
+      - '{{BaseURL}}/cloud-config.txt'
+
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - 'ssh_authorized_keys'
+          - '#cloud-config'
+        condition: and
+        case-insensitive: true
+
+      - type: status
+        status:
+          - 200

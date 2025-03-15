@@ -1,0 +1,29 @@
+id: netbeans-config
+
+info:
+  name: Exposed Netbeans configuration
+  author: sbani
+  severity: info
+  description: Searches for a exposed Netbeans configuration
+  tags: generic
+  metadata:
+    max-request: 1
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/nbproject/project.properties"
+      - "{{BaseURL}}/nbproject/project.properties.old"
+
+    matchers-condition: and
+    matchers:
+      - type: regex
+        regex:
+          - "(?mi)^src.dir="
+          - "(?mi)^build.[a-zA-Z]+="
+          - "(?mi)^jar.[a-zA-Z]+="
+        condition: or
+
+      - type: status
+        status:
+          - 200

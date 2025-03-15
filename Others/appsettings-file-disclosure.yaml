@@ -1,0 +1,128 @@
+id: appsettings-file-disclosure
+
+info:
+  name: Application Setting file disclosure
+  author: DhiyaneshDK,tess,reewardius
+  severity: high
+  description: |
+    appsetting.json file discloses the DB connection strings containing sensitive information.
+  reference:
+    - https://twitter.com/hacker_/status/1518003548855930882?s=20&t=BVauK0yUjVl5yL7rwy0Eag
+  metadata:
+    verified: true
+  tags: iis,asp,exposed,generic
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/_framework/appsettings.Dev.json"
+      - "{{BaseURL}}/_framework/appsettings.Development.json"
+      - "{{BaseURL}}/_framework/appsettings.Local.json"
+      - "{{BaseURL}}/_framework/appsettings.Prod.json"
+      - "{{BaseURL}}/_framework/appsettings.Production.json"
+      - "{{BaseURL}}/_framework/appsettings.Test.json"
+      - "{{BaseURL}}/_framework/appsettings.json"
+      - "{{BaseURL}}/_framework/appsettingsDev.json"
+      - "{{BaseURL}}/_framework/appsettingsLocal.json"
+      - "{{BaseURL}}/_framework/appsettingsProd.json"
+      - "{{BaseURL}}/_framework/appsettingsTest.json"
+      - "{{BaseURL}}/appsettings"
+      - "{{BaseURL}}/appsettings.Dev.json"
+      - "{{BaseURL}}/appsettings.DevLocal.json"
+      - "{{BaseURL}}/appsettings.DevTest.json"
+      - "{{BaseURL}}/appsettings.Devel.json"
+      - "{{BaseURL}}/appsettings.Development.json"
+      - "{{BaseURL}}/appsettings.DevelopmentLocal.json"
+      - "{{BaseURL}}/appsettings.DevelopmentTes.json"
+      - "{{BaseURL}}/appsettings.Devs.json"
+      - "{{BaseURL}}/appsettings.Kubernetes.json"
+      - "{{BaseURL}}/appsettings.Local.json"
+      - "{{BaseURL}}/appsettings.Pilot.json"
+      - "{{BaseURL}}/appsettings.PilotTest.json"
+      - "{{BaseURL}}/appsettings.Prod.json"
+      - "{{BaseURL}}/appsettings.ProdKubernetes.json"
+      - "{{BaseURL}}/appsettings.ProdLocal.json"
+      - "{{BaseURL}}/appsettings.Produ.json"
+      - "{{BaseURL}}/appsettings.Production.json"
+      - "{{BaseURL}}/appsettings.ProductionKubernetes.json"
+      - "{{BaseURL}}/appsettings.ProductionLocal.json"
+      - "{{BaseURL}}/appsettings.Secrets.json"
+      - "{{BaseURL}}/appsettings.Staging.json"
+      - "{{BaseURL}}/appsettings.Student.json"
+      - "{{BaseURL}}/appsettings.Test.json"
+      - "{{BaseURL}}/appsettings.TestBackup.json"
+      - "{{BaseURL}}/appsettings.TestLoad.json"
+      - "{{BaseURL}}/appsettings.TestLocal.json"
+      - "{{BaseURL}}/appsettings.Testing.json"
+      - "{{BaseURL}}/appsettings.UAT.json"
+      - "{{BaseURL}}/appsettings.World-Test.json"
+      - "{{BaseURL}}/appsettings.World.json"
+      - "{{BaseURL}}/appsettings.acceptance.json"
+      - "{{BaseURL}}/appsettings.beta.json"
+      - "{{BaseURL}}/appsettings.config"
+      - "{{BaseURL}}/appsettings.dev.json"
+      - "{{BaseURL}}/appsettings.development.ini"
+      - "{{BaseURL}}/appsettings.development.json"
+      - "{{BaseURL}}/appsettings.development.json~"
+      - "{{BaseURL}}/appsettings.env"
+      - "{{BaseURL}}/appsettings.environment.json"
+      - "{{BaseURL}}/appsettings.gamma.json"
+      - "{{BaseURL}}/appsettings.integration.json"
+      - "{{BaseURL}}/appsettings.json"
+      - "{{BaseURL}}/appsettings.json~"
+      - "{{BaseURL}}/appsettings.k8s.json"
+      - "{{BaseURL}}/appsettings.local.json"
+      - "{{BaseURL}}/appsettings.perf.json"
+      - "{{BaseURL}}/appsettings.prod.json"
+      - "{{BaseURL}}/appsettings.production.ini"
+      - "{{BaseURL}}/appsettings.production.json"
+      - "{{BaseURL}}/appsettings.production.json~"
+      - "{{BaseURL}}/appsettings.properties"
+      - "{{BaseURL}}/appsettings.secrets.json"
+      - "{{BaseURL}}/appsettings.stable.json"
+      - "{{BaseURL}}/appsettings.stage.json"
+      - "{{BaseURL}}/appsettings.staging.ini"
+      - "{{BaseURL}}/appsettings.staging.json"
+      - "{{BaseURL}}/appsettings.staging.json~"
+      - "{{BaseURL}}/appsettings.test.json"
+      - "{{BaseURL}}/appsettingsDev.json"
+      - "{{BaseURL}}/appsettingsLocal.json"
+      - "{{BaseURL}}/appsettingsProd.json"
+      - "{{BaseURL}}/appsettingsProduction.json"
+      - "{{BaseURL}}/appsettingsTest.json"
+      - "{{BaseURL}}/wwwroot/appsettings.json"
+      - "{{BaseURL}}/appsettings.gw.json"
+      - "{{BaseURL}}/appsettings.MongoDB.json"
+      - "{{BaseURL}}/appsettings.docker.json"
+      - "{{BaseURL}}/appsettings.release.json"
+      - "{{BaseURL}}/appsettings.AWS.json"
+      - "{{BaseURL}}/appsettings.Logs.json"
+      - "{{BaseURL}}/appsettings.default.json"
+      
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "ConnectionStrings"
+          - "connectionString"
+          - "serverOptions"
+          - "AllowedHosts"
+          - "AppSettings"
+          - "globalSettings"
+          - "Logging"
+          - "ServiceUrl"
+          - "HostName"
+          - "Enrich"
+          - "ConfigServer"
+          - "LogLevel"
+        condition: or
+        
+      - type: word
+        part: header
+        words:
+          - "application/json"
+          
+      - type: status
+        status:
+          - 200

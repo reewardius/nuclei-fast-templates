@@ -1,0 +1,28 @@
+id: prometheus-log
+
+info:
+  name: Exposed Prometheus
+  author: dhiyaneshDK
+  severity: low
+  tags: prometheus,cloud
+  metadata:
+    max-request: 2
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/prometheus"
+      - "{{BaseURL}}/actuator/prometheus"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'gateway_request_total'
+          - 'logback_events_total'
+        condition: or
+
+      - type: status
+        status:
+          - 200

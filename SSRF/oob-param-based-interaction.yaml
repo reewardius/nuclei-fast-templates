@@ -1,0 +1,24 @@
+id: oob-param-based-interaction
+
+info:
+  name: Parameter Based Generic OOB Interaction
+  author: pdteam
+  severity: high
+  description: The remote server fetched a spoofed URL from the request parameters.
+  reference:
+    - https://github.com/PortSwigger/collaborator-everywhere
+  metadata:
+    max-request: 1
+  tags: ssrf,generic
+  
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/?u=http://{{interactsh-url}}/&s=http://{{interactsh-url}}/&q=http://{{interactsh-url}}/&query=http://{{interactsh-url}}/&search=http://{{interactsh-url}}/&host={{interactsh-url}}&http_host={{interactsh-url}}&email=root@{{interactsh-url}}&url=http://{{interactsh-url}}/&load=http://{{interactsh-url}}/&preview=http://{{interactsh-url}}/&target=http://{{interactsh-url}}/&proxy=http://{{interactsh-url}}/&src=http://{{interactsh-url}}/"
+      
+    stop-at-first-match: true
+    matchers:
+      - type: word
+        part: interactsh_protocol
+        words:
+          - "http"

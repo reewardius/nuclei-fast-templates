@@ -1,0 +1,34 @@
+id: php-code-injection-print
+
+info:
+  name: PHP Code Injection Print
+  author: reewardius
+  severity: critical
+  tags: fuzzing-rce
+  
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+      
+    payloads:
+      rce:
+        - '+print(2281337);'
+    fuzzing:
+      - part: query
+        mode: multiple
+        type: replace
+        fuzz:
+          - "{{rce}}"
+          
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "2281337"
+      - type: status
+        status:
+          - 200
+          - 206
+        condition: or

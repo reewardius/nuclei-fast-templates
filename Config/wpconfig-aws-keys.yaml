@@ -1,0 +1,27 @@
+id: wpconfig-aws-keys
+
+info:
+  name: wpconfig leaks
+  author: reewardius
+  severity: high
+  tags: config-files,php,aws,amazon,wordpress
+  metadata:
+    max-request: 3
+
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}/wp-config.php-backup'
+      - '{{BaseURL}}/wp-config.php.backup'
+      - '{{BaseURL}}/wp-config.php-old'
+      
+    stop-at-first-match: true
+    matchers:
+      - type: word
+        words:
+          - 'access-key-id'
+          - 'secret-access-key'
+          - 'DB_NAME'
+          - 'DB_PASS'
+        condition: or
+        part: body

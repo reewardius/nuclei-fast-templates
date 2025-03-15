@@ -1,0 +1,39 @@
+id: cadvisor-exposure
+
+info:
+  name: cAdvisor - Detect
+  author: DhiyaneshDk
+  severity: medium
+  description: cAdvisor page was detected.
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    cvss-score: 5.3
+    cwe-id: CWE-200
+  metadata:
+    verified: true
+    max-request: 2
+    shodan-query: title:"cAdvisor"
+  tags: cloud
+
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}/containers/'
+      - '{{Host}}:4194/containers/'
+      
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "<title>cAdvisor - /</title>"
+
+      - type: word
+        part: header
+        words:
+          - "text/html"
+
+      - type: status
+        status:
+          - 200
