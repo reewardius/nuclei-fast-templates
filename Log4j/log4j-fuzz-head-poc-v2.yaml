@@ -4,7 +4,7 @@ info:
   name: log4j-rce-poc-v2
   author: reewardius
   severity: critical
-  tags: log4j,fuzzing,rce
+  tags: log4j,rce
 
 http:
   - raw:

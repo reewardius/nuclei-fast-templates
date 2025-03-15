@@ -5,7 +5,7 @@ info:
   author: reewardius
   reference: https://xcat.readthedocs.io/en/latest/
   severity: medium
-  tags: fuzzing-ssrf,fuzzing
+  tags: fuzzing-ssrf
 
 http:
   - method: GET
@@ -33,4 +33,3 @@ http:
         words:
           - "http"
           - "dns"
-        condition: or

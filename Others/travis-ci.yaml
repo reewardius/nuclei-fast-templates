@@ -13,6 +13,7 @@ http:
       - "{{BaseURL}}/%2Etravis.yml"
       - "{{BaseURL}}/.travis.yaml"
       
+    stop-at-first-match: true
     matchers:
       - type: word
         part: body

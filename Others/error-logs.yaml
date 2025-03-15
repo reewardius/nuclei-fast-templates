@@ -4,7 +4,7 @@ info:
   name: Common Error Log Files
   author: reewardius
   severity: low
-  tags: exposed,generic,error
+  tags: exposed,generic,error,logs
   
 http:
   - method: GET

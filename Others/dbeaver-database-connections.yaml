@@ -14,7 +14,7 @@ info:
   metadata:
     max-request: 2
     verified: true
-  tags: cloud,generic
+  tags: generic
 
 http:
   - method: GET

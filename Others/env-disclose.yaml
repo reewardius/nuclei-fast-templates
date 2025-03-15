@@ -65,14 +65,12 @@ http:
           - "MAIL_FROM_ADDRESS="
           - "MAIL_ENCRYPTION="
         part: body
-        condition: or
         
       - type: regex
         regex:
           - "(?m)^APP_(NAME|ENV|KEY|DEBUG|URL|PASSWORD|SECRET)"
           - "(?m)^DB_(HOST|PASSWORD|DATABASE)"
           - "(?m)^AWS_(SESSION|LAMBDA|SECRET|REGION|ACCESS)"
-        condition: or
         
       - type: word
         part: body

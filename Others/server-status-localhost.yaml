@@ -25,6 +25,7 @@ http:
       X-Remote-IP: "127.0.0.1"
       X-True-IP: "127.0.0.1"
       
+    stop-at-first-match: true
     matchers:
       - type: word
         part: body

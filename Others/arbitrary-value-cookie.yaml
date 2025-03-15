@@ -5,7 +5,7 @@ info:
   author: reewardius
   reference: https://hackerone.com/reports/806577
   severity: medium
-  tags: xss,fuzzing
+  tags: fuzzing-xss
   
 http:
   - method: GET

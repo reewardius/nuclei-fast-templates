@@ -4,7 +4,7 @@ info:
   name: DOM XSS
   author: reewardius
   severity: medium
-  tags: dom-xss,fuzzing
+  tags: fuzzing-xss
   
 http:
   - method: GET

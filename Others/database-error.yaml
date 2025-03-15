@@ -7,7 +7,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: http.title:"Database Error"
-  tags: cloud,sqli,generic
+  tags: generic
 
 http:
   - method: GET

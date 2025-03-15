@@ -204,10 +204,8 @@ http:
         binary:
           - "4a4156412050524f46494c45" # "JAVA PROFILE"
           - "4850524f46" # "HPROF"
-        condition: or
         
       - type: word
         words:
           - "JAVA PROFILE"
           - "HPROF"
-        condition: or

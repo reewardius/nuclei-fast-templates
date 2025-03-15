@@ -4,7 +4,7 @@ info:
   name: Blind Cross Site Scripting
   author: reewardius
   severity: high
-  tags: fuzzing-xss,fuzzing,blind-xss
+  tags: fuzzing-xss,blind-xss
   
 http:
   - raw:

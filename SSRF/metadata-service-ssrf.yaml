@@ -5,7 +5,7 @@ info:
   author: reewardius
   severity: high
   description: https://blog.projectdiscovery.io/abusing-reverse-proxies-metadata/
-  tags: ssrf,cloud,generic,fuzzing
+  tags: ssrf,cloud,generic
 
 http:
   - raw:

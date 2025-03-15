@@ -850,7 +850,6 @@ http:
           - "MAIL_FROM_ADDRESS="
           - "MAIL_ENCRYPTION="
         part: body
-        condition: or
         
       - type: regex
         regex:
@@ -860,7 +859,6 @@ http:
           - "(?m)^AWS_(SESSION|LAMBDA|SECRET|REGION|ACCESS)"
           - 'jdbc:[a-z:]+://[A-Za-z0-9\.\-_:;=/@?,&]+'
           - '((?i)password|pwd|pass|secretkey|secret_key)='
-        condition: or
 
       - type: word
         part: body
