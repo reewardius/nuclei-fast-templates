@@ -4,7 +4,7 @@ info:
   name: Error Log Exposed
   author: reewardius
   severity: low
-  tags: config,exposed,generic
+  tags: config,exposed,generic,logs
 
 http:
   - method: GET

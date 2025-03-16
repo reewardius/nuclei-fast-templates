@@ -19,6 +19,7 @@ http:
       - "{{BaseURL}}"
       - "{{BaseURL}}/widgets/platformx/-/svg-badge.svg"
 
+    stop-at-first-match: true
     matchers-condition: and
     matchers:
       - type: word

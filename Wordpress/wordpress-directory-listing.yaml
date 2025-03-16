@@ -67,7 +67,6 @@ http:
       - "{{Hostname}}/wp-uploads/"
       
     stop-at-first-match: true
-    matchers-condition: and
     matchers:
       - type: word
         words:
@@ -76,5 +75,4 @@ http:
           - "[To Parent Directory]"
           - "Directory: /"
           - "&lt;dir&gt;"
-        condition: or
         case-insensitive: true

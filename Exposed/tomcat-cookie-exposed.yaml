@@ -16,7 +16,8 @@ http:
     path:
       - "{{BaseURL}}/examples/servlets/servlet/CookieExample"
       - "{{BaseURL}}/..;/examples/servlets/servlet/CookieExample"
-
+      
+    stop-at-first-match: true
     matchers-condition: and
     matchers:
       - type: word

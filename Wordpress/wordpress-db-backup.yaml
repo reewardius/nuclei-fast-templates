@@ -4,7 +4,7 @@ info:
   name: WordPress DB Backup
   author: dwisiswant0,reewardius
   severity: medium
-  tags: wordpress,php,generic,backup,wp
+  tags: wordpress,php,generic,wp
     
 http:
   - method: GET
@@ -19,6 +19,7 @@ http:
       - "{{BaseURL}}/blog/wp-content/backup/"
       - "{{BaseURL}}/blog/wp-content/db-backup/"
       
+    stop-at-first-match: true
     matchers-condition: and
     matchers:
       - type: word

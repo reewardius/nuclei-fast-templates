@@ -4,7 +4,7 @@ info:
   name: Database account information for WordPress blog leaked via txt configuration file
   author: c4sper0
   severity: high
-  tags: backup,wordpress,wp
+  tags: wordpress,wp
   
 http:
   - method: GET

@@ -11,6 +11,7 @@ http:
     path:
       - "{{BaseURL}}"
       
+    stop-at-first-match: true
     matchers:
       - type: word
         part: body
@@ -21,5 +22,4 @@ http:
           - 'PJANGO_REPO_DIR'
           - 'SERVER_PORT'
           - 'HTTP_COOKIE'
-          - 'PJANGO_DB_USER'
-        condition: or		  
+          - 'PJANGO_DB_USER'	  

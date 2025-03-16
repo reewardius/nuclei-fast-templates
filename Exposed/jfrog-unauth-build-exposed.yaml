@@ -18,7 +18,8 @@ http:
         Content-Type: application/json
 
         {"name":"","before":"","after":"","direction":"desc","order_by":"date","num_of_rows":100}
-
+        
+    stop-at-first-match: true
     matchers-condition: and
     matchers:
       - type: word

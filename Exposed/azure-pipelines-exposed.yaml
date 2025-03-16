@@ -15,7 +15,7 @@ http:
     path:
       - "{{BaseURL}}/.azure-pipelines.yml"
       - "{{BaseURL}}/azure-pipelines.yml"
-
+      
     stop-at-first-match: true
     matchers-condition: and
     matchers:

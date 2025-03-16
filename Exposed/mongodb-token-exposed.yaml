@@ -18,7 +18,6 @@ http:
         words:
           - "mongodb.net"
           - "mongodb+srv://"
-        condition: or
         
       - type: status
         status:

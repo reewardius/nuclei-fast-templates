@@ -1,4 +1,4 @@
-id: CVE-2019-11248
+id: debug-pprof-exposed
 
 info:
   name: Debug Endpoint pprof - Exposure Detection
@@ -47,4 +47,3 @@ http:
           - "timeout="
           - "(pprof) top"
           - "nodes out of"
-        condition: or

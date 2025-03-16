@@ -32,6 +32,7 @@ http:
         Content-length: 100
     
     redirects: true
+    stop-at-first-match: true
     matchers:
       - type: word
         words:
