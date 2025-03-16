@@ -27,7 +27,7 @@ http:
       - "{{BaseURL}}/wp-content/uploads/2027/"
       - "{{BaseURL}}/wp-content/uploads/2028/"
       - "{{BaseURL}}/wp-content/uploads/2029/"
-      - "{{BaseURL}}/wp-content/uploads/203-/"
+      - "{{BaseURL}}/wp-content/uploads/2030/"
       - "{{BaseURL}}/wp-content/_uploads/"
       - "{{BaseURL}}/uploads/"
 
