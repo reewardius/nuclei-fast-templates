@@ -5,7 +5,7 @@ info:
   author: reewardius
   severity: critical
   reference: https://aditya-chauhan17.medium.com/host-header-injection-to-rce-1619311b21bc
-  tags: rce,generic
+  tags: rce,generic,crlf
   
 http:
   - method: GET

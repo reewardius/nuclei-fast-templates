@@ -4,7 +4,7 @@ info:
   name: Pyimport Fuzzing RCE
   author: reewardius
   severity: critical
-  tags: fuzzing-rce
+  tags: fuzzing-rce,fuzzing-req
   
 http:
   - method: GET

@@ -4,7 +4,7 @@ info:
   name: Nagli XSS in GET Parameters
   author: reewardius
   severity: medium
-  tags: fuzzing-xss,fuzzing
+  tags: fuzzing-xss,fuzzing-req
 
 http:
   - method: GET

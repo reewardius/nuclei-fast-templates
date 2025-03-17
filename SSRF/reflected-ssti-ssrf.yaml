@@ -6,7 +6,7 @@ info:
   severity: critical
   reference:
     - https://www.pwny.cc/web-attacks/server-side-template-injection-ssti
-  tags: fuzzing-rce,fuzzing-ssti
+  tags: fuzzing-rce,fuzzing-ssti,fuzzing-req
   
 http:
   - method: GET

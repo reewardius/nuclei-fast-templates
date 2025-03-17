@@ -4,7 +4,7 @@ info:
   name: blind-xss
   author: reewardius
   severity: high
-  tags: blind-xss,generic,fuzzing-req
+  tags: blind-xss,generic
   
 http:
   - raw:

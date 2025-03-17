@@ -6,7 +6,7 @@ info:
   severity: high
   description: Windows is vulnerable to local file inclusion because of searches for /windows/win.ini on passed URLs.
   reference: https://infosecwriteups.com/bugbounty-api-keys-leakage-source-code-disclosure-in-indias-largest-e-commerce-health-care-c75967392c7e
-  tags: fuzzing-lfi
+  tags: fuzzing-lfi,fuzzing-req
   
 http:
   - method: GET

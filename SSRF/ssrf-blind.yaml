@@ -8,7 +8,7 @@ info:
     - https://webs3c.com/t/from-nothing-to-aws-credentials/220
     - https://jinone.github.io/bugbounty-a-simple-ssrf/
     - https://twitter.com/hacker_/status/1694554718574710865
-  tags: fuzzing-ssrf
+  tags: fuzzing-ssrf,fuzzing-req
 
 http:
   - method: GET

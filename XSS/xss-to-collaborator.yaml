@@ -4,7 +4,7 @@ info:
   name: Blind XSS Collaborator
   author: reewardius
   severity: medium
-  tags: fuzzing-xss
+  tags: fuzzing-xss,fuzzing-req
 
 http:
   - method: GET

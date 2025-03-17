@@ -43,7 +43,6 @@ http:
     matchers:
       - type: word
         part: body
-        condition: or
         words:
           - "'>\"<svg/onload=confirm('xss-"
           - "<svg/onload=confirm('xss-location"

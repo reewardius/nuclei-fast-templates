@@ -5,7 +5,7 @@ info:
   author: reewardius
   reference: https://telegra.ph/Kriticheskij-SSRF-na-Evernote-04-01
   severity: high
-  tags: fuzzing-ssrf
+  tags: fuzzing-ssrf,fuzzing-req
   
 http:
   - method: GET

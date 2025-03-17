@@ -5,7 +5,7 @@ info:
   author: reewardius
   severity: low
   description: A user-controlled input redirects users to an external website.
-  tags: fuzzing-redirect
+  tags: fuzzing-redirect,fuzzing-req
   
 http:
   - method: GET

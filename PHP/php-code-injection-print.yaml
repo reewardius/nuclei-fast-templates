@@ -4,7 +4,7 @@ info:
   name: PHP Code Injection Print
   author: reewardius
   severity: critical
-  tags: fuzzing-rce
+  tags: fuzzing-rce,fuzzing-req
   
 http:
   - method: GET

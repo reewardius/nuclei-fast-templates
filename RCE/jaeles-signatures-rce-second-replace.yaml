@@ -4,7 +4,7 @@ info:
   name: Reflected RCE Jaeles
   author: reewardius
   severity: critical
-  tags: fuzzing-rce
+  tags: fuzzing-rce,fuzzing-req
   
 http:
   - method: GET
@@ -48,4 +48,3 @@ http:
         status:
           - 200
           - 206
-        condition: or

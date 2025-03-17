@@ -6,7 +6,7 @@ info:
   severity: high
   reference:
     - https://owasp.org/www-community/attacks/Unicode_Encoding
-  tags: fuzzing-lfi
+  tags: fuzzing-lfi,fuzzing-req
   
 variables:
   fuzz: "../../../../../../../../../../../../../../../"

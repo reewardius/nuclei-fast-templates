@@ -115,7 +115,6 @@ http:
         words:
           - "<?php"
           - "<?="
-        condition: or
 
       - type: word
         part: body
@@ -127,4 +126,3 @@ http:
           - "'DB_PASSWORD'"
           - "DB_PASS"
           - "define('DB_"
-        condition: or

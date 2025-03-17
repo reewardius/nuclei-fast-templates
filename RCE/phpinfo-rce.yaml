@@ -5,7 +5,7 @@ info:
   author: reewardius
   reference: https://www.invicti.com/learn/remote-code-execution-rce/
   severity: medium
-  tags: fuzzing-rce
+  tags: fuzzing-rce,fuzzing-req
   
 http:
   - method: GET

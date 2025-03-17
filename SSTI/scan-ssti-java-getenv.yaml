@@ -8,7 +8,7 @@ info:
   reference: 
     - https://www.linkedin.com/in/hernanrodriguez-/
     - https://twitter.com/SuhradMakwana/status/1721405829298176205
-  tags: fuzzing-ssti
+  tags: fuzzing-ssti,fuzzing-req
   
 http:
   - method: GET

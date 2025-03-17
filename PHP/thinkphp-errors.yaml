@@ -42,4 +42,3 @@ http:
           - 200
           - 500
           - 404
-        condition: or
