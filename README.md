@@ -7,6 +7,18 @@ uro -i passive.txt -o dedupe.txt
 nuclei -l dedupe.txt -tags fuzzing-rce,fuzzing-redirect,fuzzing-xxe,fuzzing-lfi,fuzzing-xss,fuzzing-ssrf,fuzzing-ssti,fuzzing-sqli
 ```
 
+| Tag               | Description                                      |
+|------------------|------------------------------------------------|
+| `fuzzing-req`   | General fuzzing for all vulnerabilities         |
+| `fuzzing-rce`   | Fuzzing for Remote Code Execution (RCE)         |
+| `fuzzing-redirect` | Fuzzing for open redirects                    |
+| `fuzzing-xxe`   | Fuzzing for XML External Entity (XXE) injection |
+| `fuzzing-lfi`   | Fuzzing for Local File Inclusion (LFI)          |
+| `fuzzing-xss`   | Fuzzing for Cross-Site Scripting (XSS)          |
+| `fuzzing-ssrf`  | Fuzzing for Server-Side Request Forgery (SSRF)  |
+| `fuzzing-ssti`  | Fuzzing for Server-Side Template Injection (SSTI) |
+| `fuzzing-sqli`  | Fuzzing for SQL Injection (SQLi)                |
+
 **Active Scan**
 ```
 subfinder -dL root.txt -all -silent -o subdomains.txt
@@ -35,15 +47,3 @@ nuclei -l resolved -tags logs
 ```
 nuclei -l resolved -tags listing
 ```
-
-| Tag               | Description                                      |
-|------------------|------------------------------------------------|
-| `fuzzing-req`   | General fuzzing for all vulnerabilities         |
-| `fuzzing-rce`   | Fuzzing for Remote Code Execution (RCE)         |
-| `fuzzing-redirect` | Fuzzing for open redirects                    |
-| `fuzzing-xxe`   | Fuzzing for XML External Entity (XXE) injection |
-| `fuzzing-lfi`   | Fuzzing for Local File Inclusion (LFI)          |
-| `fuzzing-xss`   | Fuzzing for Cross-Site Scripting (XSS)          |
-| `fuzzing-ssrf`  | Fuzzing for Server-Side Request Forgery (SSRF)  |
-| `fuzzing-ssti`  | Fuzzing for Server-Side Template Injection (SSTI) |
-| `fuzzing-sqli`  | Fuzzing for SQL Injection (SQLi)                |
