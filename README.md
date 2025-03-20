@@ -2,7 +2,7 @@
 
 **Passive Fuzzing**
 ```
-katana -u root.txt -ps -o passive.txt
+katana -u root.txt -ps -f qurl -o passive.txt
 uro -i passive.txt -o dedupe.txt
 nuclei -l dedupe.txt -tags fuzzing-req -dast
 ```
