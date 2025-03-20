@@ -38,7 +38,6 @@ http:
         part: header
 
       - type: status
-        condition: or
         status:
           - 301
           - 302
