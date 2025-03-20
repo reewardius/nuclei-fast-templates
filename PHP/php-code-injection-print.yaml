@@ -13,7 +13,7 @@ http:
       
     payloads:
       rce:
-        - '+print(2281337);'
+        - '+print(2281337*2);'
     fuzzing:
       - part: query
         mode: multiple
@@ -22,13 +22,10 @@ http:
           - "{{rce}}"
           
     stop-at-first-match: true
-    matchers-condition: and
     matchers:
       - type: word
         words:
-          - "2281337"
+          - "4562674"
       - type: status
         status:
           - 200
-          - 206
-        condition: or
