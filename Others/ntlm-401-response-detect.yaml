@@ -25,7 +25,6 @@ http:
         words:
           - "WWW-Authenticate: NTLM"
           - "WWW-Authenticate"
-        condition: or
         
       - type: status
         status:

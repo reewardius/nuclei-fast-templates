@@ -10,7 +10,7 @@ http:
   - raw:
       - |
         GET / HTTP/1.1
-        Host: {{Host}}.{{Port}}.BSSRF-011.{{interactsh-url}}
+        Host: {{Hostname}}
         X-Forwarded-Host: {{Host}}.{{Port}}.BSSRF-011.{{interactsh-url}}
         User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
         Cache-Control: no-transform
@@ -23,4 +23,3 @@ http:
         words:
           - "dns"
           - "http"
-        condition: or
