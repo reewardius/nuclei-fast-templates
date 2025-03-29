@@ -22,4 +22,3 @@ http:
         words:
           - "dns"
           - "http"
-        condition: or

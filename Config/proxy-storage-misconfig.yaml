@@ -10,7 +10,7 @@ info:
 http:
   - method: GET
     path:
-      - "{{RootURL}}{{Path}}99999/"
+      - "{{RootURL}}/{{Path}}99999/"
       - "{{BaseURL}}/images999999/"
       - "{{BaseURL}}/src999999/"
       - "{{BaseURL}}/resources999999/"
@@ -36,4 +36,3 @@ http:
         status:
           - 404
           - 200
-        condition: or
