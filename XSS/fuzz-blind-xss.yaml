@@ -28,4 +28,4 @@ http:
       - type: word
         part: body
         words:
-          - "https://js.rip/bugbounty"
+          - "<script src=//js.rip/bugbounty"
