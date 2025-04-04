@@ -842,6 +842,7 @@ http:
       - "{{BaseURL}}/wp-content/.env"
       - "{{BaseURL}}/www/.env"
       
+    stop-at-first-match: true
     matchers-condition: or
     matchers:
       - type: word
@@ -859,11 +860,3 @@ http:
           - "(?m)^AWS_(SESSION|LAMBDA|SECRET|REGION|ACCESS)"
           - 'jdbc:[a-z:]+://[A-Za-z0-9\.\-_:;=/@?,&]+'
           - '((?i)password|pwd|pass|secretkey|secret_key)='
-
-      - type: word
-        part: body
-        words:
-          - "env"
-          - "debug"
-          - "variable"
-        condition: and

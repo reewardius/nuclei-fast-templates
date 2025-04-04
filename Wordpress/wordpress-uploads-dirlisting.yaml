@@ -30,7 +30,8 @@ http:
       - "{{BaseURL}}/wp-content/uploads/2030/"
       - "{{BaseURL}}/wp-content/_uploads/"
       - "{{BaseURL}}/uploads/"
-
+      
+    stop-at-first-match: true
     matchers-condition: and
     matchers:
       - type: word
