@@ -18,7 +18,7 @@ http:
         
     fuzzing:
       - part: query
-        mode: multiple
+        mode: single
         type: replace
         fuzz:
           - "{{xss}}"
