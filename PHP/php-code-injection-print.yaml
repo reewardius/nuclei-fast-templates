@@ -22,6 +22,7 @@ http:
           - "{{rce}}"
           
     stop-at-first-match: true
+    matchers-condition: and
     matchers:
       - type: word
         words:
