@@ -4,7 +4,7 @@ info:
   name: Android manifest debuggable enabled
   author: MrW0l05zyn
   severity: low
-  tags: android
+  tags: android,file
 
 file:
   - extensions:

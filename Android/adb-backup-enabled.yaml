@@ -4,7 +4,7 @@ info:
   name: ADB Backup Enabled
   author: gaurang
   severity: low
-  tags: android,backup
+  tags: android,backup,file
   
 file:
   - extensions:

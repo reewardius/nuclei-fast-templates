@@ -4,7 +4,7 @@ info:
   name: Private Key Detect
   author: gaurang
   severity: high
-  tags: android,secret
+  tags: android,secret,file
   
 file:
   - extensions:

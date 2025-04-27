@@ -4,7 +4,7 @@ info:
   name: S3 Bucket Detect 
   author: gaurang
   severity: info
-  tags: android
+  tags: android,file
   
 file:
   - extensions:

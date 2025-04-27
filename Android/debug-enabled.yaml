@@ -4,7 +4,7 @@ info:
   name: Android Debug Enabled
   author: gaurang
   severity: low
-  tags: android
+  tags: android,file
   
 file:
   - extensions:

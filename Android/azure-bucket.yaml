@@ -4,7 +4,7 @@ info:
   name: Azure Bucket Detect 
   author: reewardius
   severity: info
-  tags: android
+  tags: android,file
   
 file:
   - extensions:

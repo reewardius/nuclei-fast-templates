@@ -4,7 +4,7 @@ info:
   name: CF Bundle Identifier
   author: reewardius
   severity: info
-  tags: ios
+  tags: ios,file
   
 file:
   - extensions:
