@@ -15,7 +15,7 @@ http:
       - "{{BaseURL}}/.sh_history"
       - "{{BaseURL}}/.zsh_history"
       
-    max-redirects: 1
+    stop-at-first-match: true
     matchers-condition: and
     matchers:
       - type: word
@@ -35,7 +35,6 @@ http:
           - "cd "
           - "cp "
           - "ps aux "
-        condition: or
 
       - type: word
         part: response
