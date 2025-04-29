@@ -25,8 +25,8 @@ http:
         words:
           - "application/xml"
           - "text/xml"
-        condition: or
-        
+          
+      - type: word
         words:
           - "Endpoint not found."
         negative: true
@@ -36,4 +36,3 @@ http:
         status:
           - 200
           - 206
-        condition: or
