@@ -1,5 +1,4 @@
 id: basic-cors
-
 info:
   name: Basic CORS misconfiguration
   author: nadino
@@ -10,16 +9,40 @@ info:
     - https://www.geekboy.ninja/blog/exploiting-misconfigured-cors-cross-origin-resource-sharing/
     - https://twitter.com/Jayesh25_/status/1730131194702958603
   tags: cors,generic
-
 http:
   - method: GET
     path:
       - "{{BaseURL}}"
     headers:
       Origin: "https://evil.com"
-      
+    
     matchers:
       - type: word
         words:
           - "Access-Control-Allow-Origin: https://evil.com"
         part: header
+    
+    extractors:
+      - type: regex
+        name: acao_header
+        part: header
+        regex:
+          - "Access-Control-Allow-Origin: (.*)"
+      
+      - type: regex
+        name: acac_header
+        part: header
+        regex:
+          - "Access-Control-Allow-Credentials: (.*)"
+          
+      - type: regex
+        name: acam_header
+        part: header
+        regex:
+          - "Access-Control-Allow-Methods: (.*)"
+          
+      - type: regex
+        name: acah_header
+        part: header
+        regex:
+          - "Access-Control-Allow-Headers: (.*)"
