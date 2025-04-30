@@ -32,9 +32,15 @@ http:
         words:
           - "<script>alert(1337)</script>"
           - "Detectify: clrf"
-        condition: or
         
       - type: word
         part: header
         words:
           - "text/html"
+          
+      - type: word
+        words:
+          - "The specified key does not exist"
+          - "Code: NoSuchKey"
+        part: body
+        negative: true
