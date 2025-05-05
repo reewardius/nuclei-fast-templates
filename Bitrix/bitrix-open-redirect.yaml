@@ -12,7 +12,7 @@ info:
     cvss-score: 6.1
     cwe-id: CWE-601
   tags: bitrix
-
+  
 http:
   - method: GET
     path:

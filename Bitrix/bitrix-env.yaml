@@ -7,7 +7,7 @@ info:
   description: Check if the .env file exists on the website.
   reference:
     - https://github.com/cr1f/writeups/blob/main/attacking_bitrix.pdf
-  tags: bitrix,env,generic
+  tags: bitrix
   
 http:
   - method: GET

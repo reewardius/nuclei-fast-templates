@@ -5,7 +5,7 @@ info:
   author: abletsoff
   severity: info
   tags: bitrix
-
+  
 http:
   - method: GET
     path:
