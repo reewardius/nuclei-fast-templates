@@ -9,7 +9,7 @@ info:
 file:
   - extensions:
       - all
-
+      
     extractors:
       - type: regex
         regex:
