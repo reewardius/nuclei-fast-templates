@@ -24,7 +24,6 @@ http:
           - "{{rce}}"
           
     stop-at-first-match: true
-    matchers-condition: or
     matchers:
       - type: word
         part: body
@@ -32,8 +31,3 @@ http:
           - "uid="
           - "gid="
         condition: and
-        
-    extractors:
-      - type: regex
-        regex:
-          - "(u|g)id=.*"

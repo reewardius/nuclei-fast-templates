@@ -135,8 +135,3 @@ http:
           - "uid="
           - "gid="
         condition: and
-
-    extractors:
-      - type: regex
-        regex:
-          - "(u|g)id=.*"

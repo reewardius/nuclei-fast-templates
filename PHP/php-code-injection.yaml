@@ -61,8 +61,3 @@ http:
       - type: word
         words:
           - "This is perl"
-          
-    extractors:
-      - type: regex
-        regex:
-          - "(u|g)id=.*"
