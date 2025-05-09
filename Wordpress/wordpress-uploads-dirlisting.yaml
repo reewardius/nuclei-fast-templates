@@ -4,7 +4,7 @@ info:
   name: WordPress Upload Directory Listing Enable
   author: yashgoti,topscoder
   severity: low
-  tags: wordpress,php,wp,generic
+  tags: wordpress,php,wp,generic,wordpress-misc
 
 http:
   - method: GET

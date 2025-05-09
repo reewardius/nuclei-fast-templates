@@ -4,7 +4,7 @@ info:
   name: Wordpress Git Config
   author: reewardius
   severity: high
-  tags: wordpress,php,generic,git,wp
+  tags: wordpress,php,generic,git,wp,wordpress-misc
 
 http:
   - method: GET

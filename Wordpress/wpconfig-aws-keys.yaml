@@ -4,7 +4,7 @@ info:
   name: wpconfig leaks
   author: reewardius
   severity: high
-  tags: config-files,php,aws,amazon,wordpress
+  tags: config-files,php,aws,amazon,wordpress,wordpress-misc
   metadata:
     max-request: 3
 

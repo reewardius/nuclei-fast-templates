@@ -4,7 +4,7 @@ info:
   name: WordPress debug log
   author: reewardius
   severity: medium
-  tags: debug,php,wordpress
+  tags: debug,php,wordpress,wordpress-misc
   
 http:
   - method: GET

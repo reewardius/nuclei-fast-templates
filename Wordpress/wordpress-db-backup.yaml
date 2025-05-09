@@ -4,7 +4,7 @@ info:
   name: WordPress DB Backup
   author: dwisiswant0,reewardius
   severity: medium
-  tags: wordpress,php,generic,wp
+  tags: wordpress,php,generic,wp,wordpress-misc
     
 http:
   - method: GET
