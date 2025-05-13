@@ -42,7 +42,7 @@ http:
       - "{{BaseURL}}/%u000ASet-Cookie:coffin=hi;"
       - "{{BaseURL}}/www.evil.com/%2E%2E%2F%0D%0Acoffin-x:coffin-x"
       - "{{BaseURL}}/www.evil.com/%2F..%0D%0Acoffin-x:coffin-x"
-    stop-at-first-match: false
+    stop-at-first-match: true
     matchers-condition: and
     matchers:
       - type: regex
