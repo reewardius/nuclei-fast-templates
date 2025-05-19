@@ -23,19 +23,22 @@ http:
           - 'src="//evil.com'
           - 'href="/\evil.com'
           - 'action="/\evil.com'
-          - 'src="/\evil.com'          
+          - 'src="/\evil.com'
           - 'href="evil.com'
           - 'action="evil.com'
-          - 'src="evil.com'             
+          - 'src="evil.com'
           - 'href="/evil.com'
           - 'action="/evil.com'
-          - 'src="/evil.com'             
-          - 'https://evil.com'          
+          - 'src="/evil.com'
+          - 'https://evil.com'
+          - 'evil.com'
           
       - type: status
         status:
-          - 200     
-          - 404
-          - 302
           - 301
-        condition: or
+          - 302
+          - 303
+          - 304
+          - 306
+          - 307
+          - 308

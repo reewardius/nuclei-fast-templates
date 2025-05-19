@@ -153,4 +153,3 @@ http:
           - 306
           - 307
           - 308
-        condition: or

@@ -19,7 +19,8 @@ http:
   - method: GET
     path:
       - "{{BaseURL}}/gotoURL.asp?url=interact.sh&id=43569"
-
+      
+    stop-at-first-match: true
     matchers:
       - type: regex
         part: header
