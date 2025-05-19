@@ -313,6 +313,8 @@ http:
         - '〵evil.com'
         - 'ゝevil.com'
         - 'ーevil.com'
+        - 'evil.com://{{Host}}'
+        - 'evil.com://{{Hostname}}'
         
     fuzzing:
       - part: query
