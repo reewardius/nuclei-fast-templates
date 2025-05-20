@@ -17,6 +17,7 @@ http:
   - method: GET
     path:
       - '{{BaseURL}}/bitrix/rk.php?goto=https://interact.sh'
+      - '{{BaseURL}}/bitrix/redirect.php?goto=https://interact.sh%252F:123@go'
       - '{{BaseURL}}/bitrix/redirect.php?event1=&event2=&event3=&goto=https://interact.sh'
       - '{{BaseURL}}/bitrix/tools/track_mail_click.php?url=https://interact.sh'
       - '{{BaseURL}}/bitrix/redirect.php?event3=352513&goto=https://interact.sh'
