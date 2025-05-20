@@ -18,6 +18,7 @@ http:
     path:
       - '{{BaseURL}}/bitrix/rk.php?goto=https://interact.sh'
       - '{{BaseURL}}/bitrix/redirect.php?event1=&event2=&event3=&goto=https://interact.sh'
+      - '{{BaseURL}}/bitrix/tools/track_mail_click.php?url=https://interact.sh'
       - '{{BaseURL}}/bitrix/redirect.php?event3=352513&goto=https://interact.sh'
       - '{{BaseURL}}/bitrix/redirect.php?event1=demo_out&event2=sm_demo&event3=pdemo&goto=https://interact.sh'
       - '{{BaseURL}}/bitrix/redirect.php?site_id=s1&event1=select_product_t1&event2=contributions&goto=https://interact.sh'
