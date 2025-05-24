@@ -17,12 +17,12 @@ info:
 http:
   - method: GET
     path:
-      - '{{BaseURL}}/bitrix/components/bitrix/mobileapp.list/ajax.php?items[1][TITLE]=TEXT+INJECTION!+PLEASE+CLICK+HERE!&items[1][DETAIL_LINK]=https://metascan.ru'
+      - '{{BaseURL}}/bitrix/components/bitrix/mobileapp.list/ajax.php?items[1][TITLE]=TEXT+INJECTION!+PLEASE+CLICK+HERE!&items[1][DETAIL_LINK]=//static.thenounproject.com/png/870666-200.png'
 
     matchers:
       - type: dsl
         dsl:
           - 'status_code == 200'
-          - 'contains(body, "https://metascan.ru")'
+          - 'contains(body, "static.thenounproject.com")'
           - 'contains(body, "mapp_itemlist_item_link")'
         condition: and

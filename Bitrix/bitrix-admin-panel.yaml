@@ -5,7 +5,7 @@ info:
   author: abletsoff
   severity: low
   description: There are plenty of other routes to access admin panel. Static filtering is not a solution.
-  tags: bitrix,admin
+  tags: bitrix
   
 http:
   - method: GET

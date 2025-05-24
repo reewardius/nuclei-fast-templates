@@ -4,7 +4,7 @@ info:
   name: FrontPage Server Config Exposure
   author: nullenc0de
   severity: critical
-  tags: generic
+  tags: generic,config
   description: FrontPage Server Config Exposure
   metadata:
     max-request: 1

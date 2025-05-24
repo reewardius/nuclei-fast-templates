@@ -5,7 +5,7 @@ info:
   author: reewardius
   reference: This extension provides a Web-based code generator for Yii framework 2.0 applications. It should be accessible only from the whitelist of allowed IP addresses
   severity: info
-  tags: php
+  tags: php,yii
   metadata:
     max-request: 3
 

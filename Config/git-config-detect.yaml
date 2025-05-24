@@ -6,7 +6,7 @@ info:
   severity: high
   reference: https://medium.com/@tanyago/exploiting-exposed-git-file-to-access-webmail-credentials-4b47a3afff38
   description: Searches for the pattern /.git/config on passed URLs
-  tags: generic,git
+  tags: generic,git,config
   
 http:
   - method: GET
@@ -89,4 +89,3 @@ http:
         words:
           - '[core]'
           - '[remote "origin"]'
-        condition: or

@@ -23,12 +23,10 @@ http:
           - "sf_symfony_lib_dir:"		  
           - "sf_web_debug: true"		  
           - "SCRIPT_NAME:"		  
-          - "SCRIPT_NAME: /frontend_dev.php"		  
-        condition: or  
+          - "SCRIPT_NAME: /frontend_dev.php"		   
         part: body
         
       - type: status
         status:
           - 404
           - 200
-        condition: or

@@ -4,7 +4,7 @@ info:
   name: Nginx - Git Configuration Exposure
   author: reewardius
   severity: high
-  tags: nginx,generic,git
+  tags: nginx,generic,git,config
 
 http:
   - method: GET

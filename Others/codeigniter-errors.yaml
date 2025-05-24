@@ -31,17 +31,13 @@ http:
           - "AWS_ACCESS_KEY_ID</td>"
           - "AWS_SECRET_ACCESS_KEY</td>"
           - "S3_BUCKET</td>"
-        condition: or
-        
+          
       - type: word
         part: body
         words:
           - "<title>Error</title>"
-          - "<title>ErrorException</title>"
-        condition: or
         
       - type: status
         status:
           - 200
           - 500
-        condition: or

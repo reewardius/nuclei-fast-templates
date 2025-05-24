@@ -5,7 +5,7 @@ info:
   author: reewardius
   reference: https://twitter.com/Hashirama_121/status/1690998164944543744/photo/1
   severity: medium
-  tags: fuzzing-xss,fuzzing-req
+  tags: fuzzing-xss,fuzzing-req,dast
 
 http:
   - method: GET

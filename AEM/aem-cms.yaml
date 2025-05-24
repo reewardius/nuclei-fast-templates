@@ -15,6 +15,7 @@ http:
       - "{{BaseURL}}/%2e/libs/granite/core/content/login.html"
       - "{{BaseURL}}/"
       
+    stop-at-first-match: true
     redirects: true
     max-redirects: 4
     matchers:

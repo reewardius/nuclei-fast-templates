@@ -7,7 +7,7 @@ info:
   reference:
     - https://www.pwny.cc/web-attacks/server-side-template-injection-ssti
     - https://www.trustedsec.com/blog/rubyerb-template-injection/
-  tags: fuzzing-ssti,fuzzing-rce,fuzzing-req
+  tags: fuzzing-ssti,fuzzing-rce,fuzzing-req,dast
   
 http:
   - method: GET

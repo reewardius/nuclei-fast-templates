@@ -23,6 +23,7 @@ http:
       - "{{BaseURL}}/_debugbar/open"
       - "{{BaseURL}}/_debugbar/open?op=get"
       
+    stop-at-first-match: true
     host-redirects: true
     max-redirects: 2
     matchers:
@@ -30,4 +31,3 @@ http:
         dsl:
           - 'contains(body_1, "phpdebugbar") && contains(body, "widget")'
           - 'contains_all(body_2, "\"utime\"","\"datetime\"","{\"id") && contains(content_type_2, "application/json")'
-        condition: or

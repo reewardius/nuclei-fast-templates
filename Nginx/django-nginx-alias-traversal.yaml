@@ -4,7 +4,7 @@ info:
   name: Django Nginx Alias Traversal
   author: reewardius
   severity: medium
-  tags: nginx,generic
+  tags: nginx,generic,django
   
 http:
   - method: GET

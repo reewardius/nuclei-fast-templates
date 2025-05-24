@@ -4,7 +4,7 @@ info:
   name: POM XML Disclosure
   author: reewardius
   severity: info
-  tags: dependency
+  tags: dependency,config
   
 http:
   - method: GET

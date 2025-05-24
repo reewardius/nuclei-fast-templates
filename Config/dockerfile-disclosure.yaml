@@ -5,7 +5,7 @@ info:
   author: morgenm
   severity: low
   description: Searches for exposed Dockerfiles.
-  tags: generic
+  tags: generic,docker,config
   
 http:
   - method: GET

@@ -4,7 +4,7 @@ info:
   name: Nexus Repository Unauthentication
   author: reewardius
   severity: medium
-  tags: cloud
+  tags: cloud,sonatype,nexus
   metadata:
     max-request: 1
     

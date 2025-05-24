@@ -41,7 +41,6 @@ http:
           - 'SuspiciousSession'
           - 'TooManyFieldsSent'
           - 'PermissionDenied'
-        condition: or
 
       - type: word
         part: header
@@ -53,4 +52,3 @@ http:
           - 400
           - 404
           - 200
-        condition: or

@@ -4,7 +4,7 @@ info:
   name: Stestr Configuration File Exposure
   author: Hardik-Solanki
   severity: info
-  tags: config-files
+  tags: config-files,config
   metadata:
     max-request: 2
 

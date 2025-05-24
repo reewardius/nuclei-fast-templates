@@ -4,7 +4,7 @@ info:
   name: webpack config disclosure
   author: ambassify
   severity: info
-  tags: config-files,generic
+  tags: config-files,generic,config
   metadata:
     max-request: 2
 

@@ -4,7 +4,7 @@ info:
   name: Local File Inclusion - Linux
   author: reewardius
   severity: high
-  tags: fuzzing-lfi,fuzzing-req
+  tags: fuzzing-lfi,fuzzing-req,dast
 
 http:
   - method: GET

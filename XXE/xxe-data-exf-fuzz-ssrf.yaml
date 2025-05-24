@@ -4,7 +4,7 @@ info:
   name: XXE via fuzzing parameter
   author: reewardius
   severity: high
-  tags: xxe
+  tags: xxe,generic
   
 http:
   - raw:

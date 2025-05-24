@@ -4,7 +4,7 @@ info:
   name: Pre Commit Configuration File Exposure
   author: DhiyaneshDk
   severity: low
-  tags: generic
+  tags: generic,config
   metadata:
     max-request: 4
     

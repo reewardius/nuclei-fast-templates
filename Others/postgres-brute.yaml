@@ -6,7 +6,7 @@ info:
   severity: high
   metadata:
     shodan-query: port:5432
-  tags: brute,network
+  tags: brute,network,postgresql
 
 javascript:
   - pre-condition: |

@@ -20,6 +20,7 @@ http:
       - '{{BaseURL}}/..%2f/dashboard.html'
       - '{{BaseURL}}/..;/dashboard.html'
       
+    stop-at-first-match: true
     max-size: 2048
     matchers-condition: and
     matchers:

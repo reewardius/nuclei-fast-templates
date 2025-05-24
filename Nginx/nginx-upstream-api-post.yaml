@@ -7,7 +7,7 @@ info:
   severity: critical
   metadata:
     max-request: 3
-  tags: nginx
+  tags: nginx,lfi,lfr
   
 http:
   - raw:

@@ -10,7 +10,7 @@ info:
     - https://classic.yarnpkg.com/lang/en/docs/yarn-lock/
   metadata:
     max-request: 1
-  tags: dependency
+  tags: dependency,config
 
 http:
   - method: GET

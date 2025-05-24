@@ -24,6 +24,7 @@ http:
       - "{{BaseURL}}/..%09/jmx-console/"
       - "{{BaseURL}}/..;\\jmx-console/"
       
+    stop-at-first-match: true
     matchers:
       - type: word
         part: body

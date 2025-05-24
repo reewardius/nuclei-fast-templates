@@ -6,7 +6,7 @@ info:
   severity: high
   reference: https://shahjerry33.medium.com/lfi-an-interesting-tweak-9c5638dbdd1b
   description: Looks for J2EE specific LFI vulnerabilities, tries to leak the web.xml file.
-  tags: fuzzing-lfi,fuzzing-req
+  tags: fuzzing-lfi,fuzzing-req,dast
   
 http:
   - method: GET

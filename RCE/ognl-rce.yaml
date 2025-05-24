@@ -5,7 +5,7 @@ info:
   author: reewardius
   severity: critical
   reference: https://medium.com/@yousefmoh15/how-i-got-rce-in-one-of-bugcrowds-public-programs-5725c8dc46ce
-  tags: fuzzing-rce,fuzzing-req
+  tags: fuzzing-rce,fuzzing-req,dast
   
 http:
   - method: GET

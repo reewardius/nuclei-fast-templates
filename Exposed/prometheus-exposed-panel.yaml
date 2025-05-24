@@ -17,7 +17,8 @@ http:
   - method: GET
     path:
       - '{{BaseURL}}/graph'
-
+      
+    stop-at-first-match: true
     matchers:
       - type: word
         words:

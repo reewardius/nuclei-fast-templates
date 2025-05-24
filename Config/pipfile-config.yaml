@@ -8,7 +8,7 @@ info:
     max-request: 3
     verified: true
     shodan-query: html:"Pipfile"
-  tags: dependency
+  tags: dependency,config
 
 http:
   - method: GET

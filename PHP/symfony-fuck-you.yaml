@@ -16,6 +16,7 @@ http:
   - method: GET
     path:
       - "{{BaseURL}}/app_dev.php/_profiler/open?file=app/config/parameters.yml"
+      
     matchers-condition: and
     matchers:
       - type: status

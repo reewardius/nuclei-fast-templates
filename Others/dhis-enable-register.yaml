@@ -4,7 +4,7 @@ info:
   name: Dhis Debug - Register
   author: reewardius
   severity: high
-  tags: cloud
+  tags: cloud,debug
 
 http:
   - method: GET

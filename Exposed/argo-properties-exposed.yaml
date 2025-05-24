@@ -21,4 +21,3 @@ http:
         words:
           - "argo.database"
           - "argo.database.host"
-        condition: or

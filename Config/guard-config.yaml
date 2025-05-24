@@ -4,7 +4,7 @@ info:
   name: Guardfile Config - Detect
   author: DhiyaneshDK
   severity: info
-  tags: config-files
+  tags: config-files,config
   description: Guardfile configuration information was detected.
   reference:
     - https://github.com/guard/guard

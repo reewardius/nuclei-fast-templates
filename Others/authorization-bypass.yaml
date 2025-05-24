@@ -33,4 +33,3 @@ http:
           - "X-Api-Key"
           - "Api-Key"
         part: header
-        condition: or

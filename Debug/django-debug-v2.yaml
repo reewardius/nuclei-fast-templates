@@ -33,6 +33,7 @@ http:
       - "{{BaseURL}}/3/a"
       - "{{BaseURL}}/4/a"
       
+    stop-at-first-match: true
     matchers:
       - type: word
         words:

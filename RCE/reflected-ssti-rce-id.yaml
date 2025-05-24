@@ -7,7 +7,7 @@ info:
   reference:
     - https://www.pwny.cc/web-attacks/server-side-template-injection-ssti
     - https://f002.backblazeb2.com/file/sec-news-backup/files/writeup/deadpool.sh/_2017_RCE_Springs_/index.html
-  tags: fuzzing-rce,fuzzing-ssti,fuzzing-req
+  tags: fuzzing-rce,fuzzing-ssti,fuzzing-req,dast
   
 http:
   - method: GET

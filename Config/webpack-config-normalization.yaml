@@ -12,7 +12,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: html:"webpack.config.js"
-  tags: generic
+  tags: generic,config
 
 http:
   - method: GET

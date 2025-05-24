@@ -4,7 +4,7 @@ info:
   name: Vim Settings Configuration File Exposure
   author: reewardius
   severity: low
-  tags: generic
+  tags: generic,config
   reference:
     - https://tillsongalloway.com/finding-sensitive-information-on-github/index.html
   metadata:

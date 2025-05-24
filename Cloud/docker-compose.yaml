@@ -4,7 +4,7 @@ info:
   name: Docker Compose Check
   author: reewardius
   severity: medium
-  tags: docker,config-files,generic
+  tags: docker,config-files,generic,config
   
 http:
   - method: GET

@@ -6,7 +6,7 @@ info:
   severity: info
   description: Google Cloud default configuration was detected.
   reference: https://cloud.google.com
-  tags: config-files
+  tags: config-files,config
 
 http:
   - method: GET

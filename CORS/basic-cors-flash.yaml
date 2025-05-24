@@ -9,7 +9,7 @@ info:
     - https://www.corben.io/advanced-cors-techniques/
     - https://www.geekboy.ninja/blog/exploiting-misconfigured-cors-cross-origin-resource-sharing/
     - https://twitter.com/Jayesh25_/status/1730131194702958603
-  tags: cors
+  tags: cors,crossdomain
 
 http:
   - method: GET

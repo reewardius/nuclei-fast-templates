@@ -8,7 +8,7 @@ info:
   metadata:
     verified: true
     shodan-query: "ElasticSearch"
-  tags: cloud,generic
+  tags: cloud,generic,elasticsearch
 
 http:
   - method: GET

@@ -5,7 +5,7 @@ info:
   author: reewardius
   description: LFi via GetFileContent
   severity: high
-  tags: lfi,generics
+  tags: lfi,generic
   
 http:
   - raw:

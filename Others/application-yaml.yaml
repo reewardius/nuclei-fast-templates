@@ -5,7 +5,7 @@ info:
   author: Cristi vlad (@cristivlad25)
   severity: info
   description: Finds Application YAML files which often contain sensitive information.
-  tags: config-files
+  tags: config-files,config
   
 http:
   - method: GET

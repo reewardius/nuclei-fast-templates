@@ -8,7 +8,7 @@ info:
   metadata:
     verified: true
     shodan-query: html:"cloud-config.yml"
-  tags: generic
+  tags: generic,config
 
 http:
   - method: GET

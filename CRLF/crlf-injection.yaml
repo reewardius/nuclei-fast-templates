@@ -8,7 +8,7 @@ info:
     - https://book.hacktricks.xyz/pentesting-web/crlf-0d-0a
     - https://github.com/r0075h3ll/Oralyzer/blob/master/core/crlf.py
     - https://infosecwriteups.com/6000-with-microsoft-hall-of-fame-microsoft-firewall-bypass-crlf-to-xss-microsoft-bug-bounty-8f6615c47922
-  tags: fuzzing-crlf,fuzzing-req
+  tags: fuzzing-crlf,fuzzing-req,dast
   
 http:
   - method: GET

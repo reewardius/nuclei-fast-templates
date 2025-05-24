@@ -5,7 +5,7 @@ info:
   author: reewardius
   severity: medium
   reference: https://medium.com/@D0rkerDevil/how-i-convert-ssrf-to-xss-in-a-ssrf-vulnerable-jira-e9f37ad5b158
-  tags: fuzzing-xss,fuzzing-req
+  tags: fuzzing-xss,fuzzing-req,dast
   
 http:
   - method: GET

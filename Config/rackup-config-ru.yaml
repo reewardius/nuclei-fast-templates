@@ -4,7 +4,7 @@ info:
   name: Rackup config.ru Configuration Exposure
   author: DhiyaneshDk
   severity: info
-  tags: config-files
+  tags: config-files,config
   reference:
     - https://raw.githubusercontent.com/maurosoria/dirsearch/master/db/dicc.txt
     - https://learn.co/lessons/config-ru-tutorial

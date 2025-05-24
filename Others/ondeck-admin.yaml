@@ -3,7 +3,7 @@ id: ondeck-admin
 info:
   name: Ondeck admin dashboard
   author: reewardius
-  tags: bypass,cloud,generic,admin
+  tags: generic
   severity: medium
   metadata:
     max-request: 1

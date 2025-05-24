@@ -4,7 +4,7 @@ info:
   name: Redis Configuration File Exposure
   author: geeknik
   reference: https://redis.io/docs/manual/config/
-  tags: config-files
+  tags: config-files,config
   severity: medium
   
 http:

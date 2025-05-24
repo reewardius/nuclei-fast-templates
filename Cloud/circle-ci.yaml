@@ -4,7 +4,7 @@ info:
   name: Circle CI Detect
   author: reewardius
   severity: medium
-  tags: cloud,config-files
+  tags: cloud,config-files,config
   
 http:
   - method: GET

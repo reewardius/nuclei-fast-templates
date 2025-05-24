@@ -5,7 +5,7 @@ info:
   description: Template to check for os command Injection vulnerabilities in GET  Url must be https://target.com/site={we will put local host here}
   severity: critical
   author: reewardius
-  tags: fuzzing-rce,generic,rce
+  tags: fuzzing-rce,generic,dast
   
 http:
   - method: GET

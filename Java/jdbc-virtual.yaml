@@ -17,6 +17,7 @@ http:
       - "{{BaseURL}}///virtualjdbc"
       - "{{BaseURL}}/v%69rtualjdbc/"
       
+    stop-at-first-match: true
     matchers:
       - type: word
         part: body

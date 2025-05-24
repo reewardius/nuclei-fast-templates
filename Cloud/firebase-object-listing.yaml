@@ -8,7 +8,7 @@ info:
   reference:
     - https://blog.securitybreached.org/2020/02/04/exploiting-insecure-firebase-database-bugbounty
     - https://bhashit.in/?p=71
-  tags: listing
+  tags: listing,firebase
 
 http:
   - raw:

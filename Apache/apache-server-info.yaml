@@ -5,7 +5,7 @@ info:
   author: DoubleTake (https://twitter.com/LeDoubleTake)
   severity: low
   description: This template checks if the some Apache endpoints can leak information like "Server Version".
-  tags: apache,generic
+  tags: apache,generic,config
   
 http:
   - method: GET

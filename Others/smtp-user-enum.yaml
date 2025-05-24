@@ -12,7 +12,7 @@ info:
     max-request: 2
     shodan-query: smtp
     verified: true
-  tags: network
+  tags: network,smtp
 
 tcp:
   - inputs:

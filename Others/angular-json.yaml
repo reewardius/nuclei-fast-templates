@@ -10,7 +10,7 @@ info:
     shodan-query:
       - html:"angular.json"
       - html:"angular-cli.json"
-  tags: cloud
+  tags: cloud,config
 
 http:
   - method: GET

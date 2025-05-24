@@ -28,7 +28,6 @@ http:
       - "{{BaseURL}}/miscadmin#/etc/msm/rolloutconfigs"
 
     stop-at-first-match: true
-
     matchers-condition: and
     matchers:
       - type: word

@@ -6,7 +6,7 @@ info:
   severity: medium
   reference: https://erickfernandox.medium.com/how-i-found-an-xss-via-multiple-parameters-d491dccc89c9
   description: Fuzzes all query parameters for various reflected XSS vulnerabilities via javascript schema URLs.
-  tags: fuzzing-xss,fuzzing-req
+  tags: fuzzing-xss,fuzzing-req,dast
 
 http:
   - method: GET

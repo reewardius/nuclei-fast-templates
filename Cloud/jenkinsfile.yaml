@@ -4,7 +4,7 @@ info:
   name: Jenkinsfile Detect
   author: reewardius
   severity: medium
-  tags: jenkins,cloud,generic
+  tags: jenkins,config,generic
   
 http:
   - method: GET

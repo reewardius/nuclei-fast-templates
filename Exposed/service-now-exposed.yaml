@@ -16,7 +16,6 @@ http:
       - "{{BaseURL}}/kb_view_customer.do?sysparm_article=KB00199999999"
       
     stop-at-first-match: true
-    matchers-condition: and
     matchers:
       - type: word
         part: body

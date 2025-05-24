@@ -4,7 +4,7 @@ info:
   name: Config PHP Configuration Exposure
   author: reewardius
   severity: high
-  tags: nginx,php,generic
+  tags: nginx,php,generic,config
   
 http:
   - method: GET

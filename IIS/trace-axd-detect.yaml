@@ -9,12 +9,12 @@ info:
   tags: iis,asp,debug,microsoft,windows
   metadata:
     max-request: 1
-
+    
 http:
   - method: GET
     path:
       - "{{BaseURL}}/Trace.axd"
-
+      
     matchers-condition: and
     matchers:
       - type: word

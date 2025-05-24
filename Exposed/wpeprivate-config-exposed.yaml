@@ -30,6 +30,5 @@ http:
           - "WPENGINE_ACCOUNT"
           - "WPENGINE_SESSION_DB_USERNAME"
           - "WPENGINE_SESSION_DB_PASSWORD"
-        condition: or
         part: body
         case-insensitive: true

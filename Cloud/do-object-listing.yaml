@@ -6,7 +6,7 @@ info:
   severity: medium
   reference:
     - https://mikey96.medium.com/cloud-based-storage-misconfigurations-critical-bounties-361647f78a29
-  tags: bucket,do,digitalocean,provider,generic,listing,fuzzing
+  tags: bucket,do,digitalocean,provider,generic,listing
   
 http:
   - method: GET

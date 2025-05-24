@@ -5,7 +5,7 @@ info:
   author: reewardius
   reference: https://zoidsec.medium.com/breaking-parse-logic-gain-access-to-nginx-api-read-write-upstreams-1cb062aa44ca
   severity: high
-  tags: nginx
+  tags: nginx,lfi,lfr
   
 http:
   - method: GET

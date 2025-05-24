@@ -7,7 +7,7 @@ info:
   description: Find github page files(Gemfile / Gemfile.lock)
   metadata:
     max-request: 2
-  tags: dependency
+  tags: dependency,config
 
 http:
   - method: GET

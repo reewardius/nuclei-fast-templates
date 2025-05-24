@@ -10,7 +10,7 @@ info:
   metadata:
     max-request: 6
     shodan-query: product:"redis"
-  tags: brute,network
+  tags: brute,network,redis
   
 javascript:
   - pre-condition: |

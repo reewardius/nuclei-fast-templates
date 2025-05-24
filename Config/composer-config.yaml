@@ -8,7 +8,7 @@ info:
   reference: https://getcomposer.org/
   metadata:
     max-request: 4
-  tags: dependency
+  tags: dependency,config
 
 http:
   - method: GET

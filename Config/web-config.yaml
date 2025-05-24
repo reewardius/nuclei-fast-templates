@@ -7,7 +7,7 @@ info:
   description: Web configuration file was detected.
   reference:
     - https://github.com/imhunterand/ApachSAL/blob/main/assets/exploits.json
-  tags: generic
+  tags: generic,config
   
 http:
   - method: GET

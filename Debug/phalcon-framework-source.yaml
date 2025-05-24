@@ -10,7 +10,7 @@ http:
   - method: GET
     path:
       - "{{BaseURL}}/anything_here"
-
+      
     matchers-condition: and
     matchers:
       - type: word

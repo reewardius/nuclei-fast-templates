@@ -4,7 +4,7 @@ info:
   name: Azure DevOps CI Detect
   author: reewardius
   severity: medium
-  tags: azure,config-files
+  tags: azure,config-files,config
 
 http:
   - method: GET

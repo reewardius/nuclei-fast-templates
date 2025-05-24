@@ -14,7 +14,8 @@ http:
     path:
       - "{{BaseURL}}/_debugbar/open?max=20&offset=0"
       - "{{BaseURL}}/_debugbar"
-
+      
+    stop-at-first-match: true
     matchers-condition: and
     matchers:
       - type: status

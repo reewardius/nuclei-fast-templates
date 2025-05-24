@@ -4,7 +4,7 @@ info:
   name: LDAP Code Injection
   author: reewardius
   severity: critical
-  tags: ldap,sqli,fuzzing
+  tags: fuzzing-req,dast
   
 http:
   - method: GET

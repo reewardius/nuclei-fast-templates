@@ -4,7 +4,7 @@ info:
   name: Users XML Files Detect
   author: reewardius
   severity: medium
-  tags: generic
+  tags: generic,config
     
 http:
   - method: GET

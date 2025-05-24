@@ -15,11 +15,11 @@ info:
 tcp:
   - inputs:
       - data: "Docker:\nVersion:\n"
-
+      
     host:
       - "{{Hostname}}"
       - "{{Host}}:2375"
-
+      
     matchers:
       - type: word
         words:

@@ -4,7 +4,7 @@ info:
   name: Reflected Cross Site Scripting
   author: pdteam
   severity: medium
-  tags: fuzzing-xss,fuzzing-req
+  tags: fuzzing-xss,fuzzing-req,dast
 
 variables:
   first: "{{rand_int(10000, 99999)}}"

@@ -14,7 +14,7 @@ info:
     max-request: 2
     verified: true
     shodan-query: html:"access_tokens.db"
-  tags: generic
+  tags: generic,config
 
 http:
   - method: GET

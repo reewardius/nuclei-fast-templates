@@ -4,7 +4,7 @@ info:
   name: Ventrilo Configuration File
   author: geeknik
   severity: high
-  tags: generic
+  tags: generic,config
   metadata:
     max-request: 2
 

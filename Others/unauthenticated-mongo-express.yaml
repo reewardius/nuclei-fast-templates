@@ -11,7 +11,7 @@ info:
     max-request: 5
     verified: true
     shodan-query: title:"Home - Mongo Express"
-  tags: cloud,generic
+  tags: cloud,generic,mongo
 
 http:
   - method: GET

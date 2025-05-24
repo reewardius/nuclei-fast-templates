@@ -4,7 +4,7 @@ info:
   name: Msmtp - Config Exposure
   author: geeknik
   severity: high
-  tags: generic
+  tags: generic,config
   description: Msmtp configuration was discovered.
   reference:
     - https://wiki.archlinux.org/title/Msmtp

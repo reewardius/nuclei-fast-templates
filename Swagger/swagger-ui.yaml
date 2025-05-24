@@ -5,7 +5,7 @@ info:
   author: pdteam,c-sh0
   severity: info
   reference: https://shahjerry33.medium.com/api-misconfiguration-no-swag-of-swaggerui-9b43135346be
-  tags: swagger,generic
+  tags: swagger,api,generic
 
 http:
   - method: GET

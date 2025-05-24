@@ -4,7 +4,7 @@ info:
   name: Websheets Config File Exposure
   author: geeknik,reewardius
   severity: medium
-  tags: generic
+  tags: generic,config
   metadata:
     max-request: 3
 

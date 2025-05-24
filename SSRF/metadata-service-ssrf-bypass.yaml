@@ -5,7 +5,7 @@ info:
   author: reewardius
   severity: critical
   description: https://blog.projectdiscovery.io/abusing-reverse-proxies-metadata/
-  tags: fuzzing-ssrf,fuzzing-req
+  tags: fuzzing-ssrf,fuzzing-req,dast
   
 http:
   - method: GET

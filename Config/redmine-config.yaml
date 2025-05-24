@@ -10,7 +10,7 @@ info:
     max-request: 3
     verified: true
     google-dork: intitle:"index of" configuration.yml
-  tags: generic
+  tags: generic,config
 
 http:
   - method: GET

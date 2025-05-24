@@ -4,7 +4,7 @@ info:
   name: Gitlab-CI Detect
   author: reewardius
   severity: medium
-  tags: gitlab,generic,config-files
+  tags: gitlab,generic,config-files,config
   
 http:
   - method: GET

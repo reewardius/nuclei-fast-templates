@@ -14,7 +14,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 2
-  tags: symfony,php,generic
+  tags: symfony,php,generic,config
 
 http:
   - method: GET

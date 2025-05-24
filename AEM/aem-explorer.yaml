@@ -14,6 +14,7 @@ http:
       - "{{BaseURL}}/..;/crx/explorer/ui/namespace_editor.jsp"
       - "{{BaseURL}}/%2e/crx/explorer/ui/namespace_editor.jsp"
       
+    stop-at-first-match: true
     redirects: true
     max-redirects: 2
     matchers:

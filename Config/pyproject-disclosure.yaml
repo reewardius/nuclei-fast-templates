@@ -8,7 +8,7 @@ info:
     - https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/pyproject-disclosure.json
   metadata:
     max-request: 3
-  tags: dependency
+  tags: dependency,config
 
 http:
   - method: GET

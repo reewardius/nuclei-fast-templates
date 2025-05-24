@@ -14,6 +14,7 @@ http:
     path:
       - "{{BaseURL}}/{{randstr}}"
       
+    stop-at-first-match: true
     matchers-condition: and
     matchers:
       - type: word

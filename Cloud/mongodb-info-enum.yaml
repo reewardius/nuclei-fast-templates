@@ -16,7 +16,7 @@ info:
     max-request: 2
     verified: true
     shodan-query: mongodb server information
-  tags: network
+  tags: network,mongo
 
 tcp:
   - inputs:

@@ -4,7 +4,7 @@ info:
   name: WEB INF Disclosure
   author: reewardius
   severity: high
-  tags: java,config-files,generic
+  tags: java,config-files,generic,config
   
 http:
   - method: GET

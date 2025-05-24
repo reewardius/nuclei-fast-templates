@@ -4,7 +4,7 @@ info:
   name: Travis CI Detect
   author: reewardius
   severity: medium
-  tags: cloud,generic
+  tags: cloud,generic,config
   
 http:
   - method: GET

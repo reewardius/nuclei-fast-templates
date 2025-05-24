@@ -5,7 +5,7 @@ info:
   author: reewardius
   severity: info
   reference: https://infosecwriteups.com/attacking-aws-common-cognito-misconfigurations-a898bf092218
-  tags: aws,amazon,generic,cognito
+  tags: aws,amazon,generic,cognito,cloud
   
 http:
   - method: GET

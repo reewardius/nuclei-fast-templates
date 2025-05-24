@@ -8,7 +8,7 @@ info:
   reference:
     - https://redis.io/topics/security
   tags: network,generic
-
+  
 tcp:
   - inputs:
       - data: "info\r\nquit\r\n"

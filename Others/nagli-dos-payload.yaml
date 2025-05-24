@@ -4,7 +4,7 @@ info:
   name: Nagli Dos Payload
   author: reewardius
   severity: high
-  tags: dos,fuzzing
+  tags: dos,fuzzing-req,dast
 
 http:
   - method: GET

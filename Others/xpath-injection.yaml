@@ -5,7 +5,7 @@ info:
   author: reewardius
   reference: https://xcat.readthedocs.io/en/latest/
   severity: medium
-  tags: fuzzing-ssrf
+  tags: fuzzing-req,dast
 
 http:
   - method: GET

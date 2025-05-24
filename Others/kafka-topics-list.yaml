@@ -10,7 +10,7 @@ info:
     max-request: 1
     verified: true
     shodan-query: product:"Kafka"
-  tags: network
+  tags: network,kafka
 
 tcp:
   - inputs:

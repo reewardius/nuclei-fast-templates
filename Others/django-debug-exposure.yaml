@@ -9,7 +9,7 @@ info:
     - https://hacklido.com/blog/704-exploiting-django-debug-mode-for-unrestricted-access-to-the-internal-dashboard
   metadata:
     max-request: 2
-  tags: debug,generic
+  tags: debug,generic,django
 
 http:
   - method: POST

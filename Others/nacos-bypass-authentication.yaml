@@ -16,7 +16,7 @@ info:
     - https://github.com/alibaba/nacos/issues/10060
     - https://avd.aliyun.com/detail?id=AVD-2023-1655789
     - https://nacos.io/zh-cn/docs/auth.html
-  tags: cloud
+  tags: cloud,nacos
   
 http:
   - method: GET

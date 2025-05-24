@@ -9,7 +9,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.favicon.hash:-2115208104
-  tags: misconfig,bitrix24,install,exposure
+  tags: bitrix
 
 http:
   - method: GET

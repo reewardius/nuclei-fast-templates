@@ -4,7 +4,7 @@ info:
   name: GolangCI-Lint Configuration File Exposure
   author: Hardik-Solanki
   severity: low
-  tags: config-files
+  tags: config-files,config
   reference:
     - https://github.com/maurosoria/dirsearch/blob/master/db/dicc.txt
   metadata:

@@ -4,7 +4,7 @@ info:
   name: Ruby-on-Rails Database Configuration Exposure
   author: pdteam,geeknik
   severity: low
-  tags: config-files
+  tags: config-files,config
   metadata:
     max-request: 3
   

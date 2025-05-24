@@ -7,7 +7,7 @@ info:
   reference:
     - http://ghostlulz.com/google-exposed-firebase-database/
     - https://bhashit.in/?p=71
-  tags: cloud
+  tags: cloud,firebase
   metadata:
     max-request: 1
 

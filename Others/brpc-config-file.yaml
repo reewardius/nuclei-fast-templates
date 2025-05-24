@@ -4,7 +4,7 @@ info:
   name: brpc config files
   author: reewardius
   severity: medium
-  tags: generic
+  tags: generic,config
   metadata:
     max-request: 1
     

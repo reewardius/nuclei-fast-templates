@@ -5,7 +5,7 @@ info:
   author: reewardius
   reference: https://github.com/OWASP/Serverless-Goat/blob/master/LESSONS.md
   severity: info
-  tags: aws,amazon,generic
+  tags: aws,amazon,generic,cloud
 
 http:
   - method: GET
@@ -20,4 +20,3 @@ http:
           - "x-amz-apigw-id"
           - "x-amzn-requestid"
           - "x-amzn-trace-id"
-        condition: or

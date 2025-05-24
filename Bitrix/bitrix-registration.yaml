@@ -28,7 +28,6 @@ http:
         words: 
           - "Регистрация"
         part: body
-        condition: or
 
       - type: status
         status:

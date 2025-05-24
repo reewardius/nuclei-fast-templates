@@ -9,7 +9,7 @@ info:
     verified: true
     shodan-query: title:"System Properties"
   tags: java,config,generic
-
+  
 http:
   - method: GET
     path:
@@ -30,7 +30,6 @@ http:
         words:
           - "text/plain"
           - "bytes"
-        condition: or
         
       - type: word
         part: header
@@ -42,4 +41,3 @@ http:
         status:
           - 200
           - 206
-        condition: or

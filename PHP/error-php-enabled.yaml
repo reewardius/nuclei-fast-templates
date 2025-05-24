@@ -7,7 +7,7 @@ info:
   reference:
     - https://medium.com/@gguzelkokar.mdbf15/xss-on-sony-subdomain-feddaea8f5ac
     - https://medium.com/@gguzelkokar.mdbf15/xss-on-sony-subdomain-feddaea8f5ac
-  tags: debug,error
+  tags: debug,error,php
   
 http:
   - method: GET

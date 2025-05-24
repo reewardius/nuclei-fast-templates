@@ -18,4 +18,3 @@ http:
         words:
           - "http"
           - "dns"
-        condition: or

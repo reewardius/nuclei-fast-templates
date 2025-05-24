@@ -4,8 +4,8 @@ info:
   name: Java Config Files
   author: reewardius
   severity: medium
-  tags: java,config-files
-    
+  tags: java,config-files,config
+  
 http:
   - method: GET
     path:
@@ -73,7 +73,6 @@ http:
           - "MonitoringJavaMelodyon"
           - "serverProperties"
         case-insensitive: true
-        condition: or
         
       - type: word
         part: header
@@ -83,10 +82,8 @@ http:
           - "text/plain"
           - "application/xml"
           - "text/xml"
-        condition: or
         
       - type: status
         status:
           - 200
           - 206
-        condition: or

@@ -12,7 +12,7 @@ info:
   tags: generic,exposed
   metadata:
     max-request: 8
-
+    
 http:
   - method: GET
     path:
@@ -33,7 +33,7 @@ http:
           - "[paths]"
           - "default"
         condition: and
-
+        
       - type: status
         status:
           - 200

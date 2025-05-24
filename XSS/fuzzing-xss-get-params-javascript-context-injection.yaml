@@ -5,7 +5,7 @@ info:
   author: quas,reewardius
   severity: medium
   description: Fuzzes all query parameters for various reflected XSS vulnerabilities via Javascript context injections.
-  tags: fuzzing-xss,fuzzing-req
+  tags: fuzzing-xss,fuzzing-req,dast
   
 http:
   - method: GET

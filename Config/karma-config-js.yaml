@@ -4,7 +4,7 @@ info:
   name: Karma Configuration File Exposure
   author: DhiyaneshDk
   severity: medium
-  tags: config-files
+  tags: config-files,config
   metadata:
     max-request: 2
 

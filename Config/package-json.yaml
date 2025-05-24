@@ -13,7 +13,7 @@ info:
   metadata:
     verified: true
     max-request: 2
-  tags: dependency
+  tags: dependency,config
 
 http:
   - method: GET

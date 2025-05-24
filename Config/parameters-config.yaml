@@ -4,7 +4,7 @@ info:
   name: Parameters.yml - File Disclosure
   author: DhiyaneshDK
   severity: high
-  tags: generic
+  tags: generic,config
   reference: https://www.exploit-db.com/ghdb/5986
 
 http:

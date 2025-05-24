@@ -5,7 +5,7 @@ info:
   description: This template can be used to detect VSCode SFTP configuration exposed  files containing sensitive information.
   author: reewardius
   severity: critical
-  tags: generic
+  tags: generic,config
 
 http:
   - method: GET

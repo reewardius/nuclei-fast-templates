@@ -4,7 +4,7 @@ info:
   name: Scrutinizer Config File Exposure
   author: DhiyaneshDK
   severity: info
-  tags: config-files
+  tags: config-files,config
   metadata:
     max-request: 2
 

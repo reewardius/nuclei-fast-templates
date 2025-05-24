@@ -5,7 +5,7 @@ info:
   author: sbani
   severity: info
   description: Searches for a exposed Netbeans configuration
-  tags: generic
+  tags: generic,config
   metadata:
     max-request: 1
 

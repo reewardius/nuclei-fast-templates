@@ -4,7 +4,7 @@ info:
   name: Published shellscripts
   author: panch0r3d
   severity: info
-  tags: exposed,generic
+  tags: exposed,generic,config
 
 http:
   - method: GET

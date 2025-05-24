@@ -15,7 +15,7 @@ info:
     max-request: 1
     verified: true
     shodan-query: title:"Nacos"
-  tags: cloud
+  tags: cloud,nacos
 
 http:
   - method: GET

@@ -4,7 +4,7 @@ info:
   author: Claude
   severity: info
   description: Detects common cloud storage URLs (Azure Blob Storage, Google Cloud Storage, AWS S3, and DigitalOcean Spaces) in HTTP responses
-  tags: cloud, storage, azure, gcp, aws, digitalocean, csp
+  tags: cloud
 
 http:
   - method: GET

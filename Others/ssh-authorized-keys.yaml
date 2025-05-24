@@ -5,7 +5,7 @@ info:
   author: geeknik
   reference: https://www.ssh.com/academy/ssh/authorized-key
   severity: low
-  tags: generic,ssh
+  tags: generic,ssh,config
 
 http:
   - method: GET

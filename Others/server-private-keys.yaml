@@ -9,7 +9,7 @@ info:
     cvss-score: 7.5
     cwe-id: CWE-200
   description: Private SSL, SSH, TLS, and JWT keys were detected.
-  tags: generic
+  tags: generic,config
 
 http:
   - method: GET

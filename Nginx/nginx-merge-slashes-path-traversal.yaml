@@ -8,7 +8,7 @@ info:
   reference:
     - https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/nginx-merge-slashes-path-traversal.json
     - https://medium.com/appsflyer/nginx-may-be-protecting-your-applications-from-traversal-attacks-without-you-even-knowing-b08f882fd43d
-  tags: nginx,generic
+  tags: nginx,generic,lfi,lfr
   
 http:
   - method: GET

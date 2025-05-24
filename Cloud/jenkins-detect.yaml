@@ -14,7 +14,7 @@ info:
     product: jenkins
     shodan-query: http.favicon.hash:81586312
     category: devops
-  tags: tech,jenkins,detect
+  tags: jenkins
 
 http:
   - method: GET

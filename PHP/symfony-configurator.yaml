@@ -5,7 +5,7 @@ info:
   author: reewardius
   severity: high
   reference: https://github.com/Synacktiv/eos
-  tags: symfony,php
+  tags: symfony,php,config
   metadata:
     max-request: 1
   

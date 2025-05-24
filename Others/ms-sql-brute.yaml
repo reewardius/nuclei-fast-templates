@@ -8,7 +8,7 @@ info:
     ms sql bruteforce templates
   metadata:
     shodan-query: port:1433
-  tags: brute,network
+  tags: brute,network,mssql
 
 javascript:
   - pre-condition: |

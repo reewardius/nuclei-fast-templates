@@ -14,10 +14,10 @@ http:
       - "{{BaseURL}}/console"
       - "{{BaseURL}}/flask/console"
       
+    stop-at-first-match: true
     matchers:
       - type: word
         words:
           - "Werkzeug"
           - "Interactive Console"
         part: body
-        condition: or

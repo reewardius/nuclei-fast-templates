@@ -9,7 +9,7 @@ info:
   reference:
     - https://bishopfox.com/blog/ruby-vulnerabilities-exploits
     - https://codeql.github.com/codeql-query-help/ruby/rb-kernel-open/
-  tags: fuzzing-rce,fuzzing-req
+  tags: fuzzing-rce,fuzzing-req,dast
 
 variables:
   marker: "{{interactsh-url}}"

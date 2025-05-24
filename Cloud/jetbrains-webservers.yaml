@@ -16,7 +16,7 @@ info:
     max-request: 3
     verified: true
     google-query: intitle:"index of" "WebServers.xml"
-  tags: config-files
+  tags: config-files,config
 
 http:
   - method: GET

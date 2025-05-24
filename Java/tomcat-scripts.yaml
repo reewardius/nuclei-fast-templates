@@ -27,7 +27,8 @@ http:
       - "{{BaseURL}}/..;/examples/jsp/index.html"
       - "{{BaseURL}}/..;/examples/websocket/index.xhtml"
       - "{{BaseURL}}/..;/examples/servlets/servlet/SessionExample"
-
+      
+    stop-at-first-match: true
     matchers:
       - type: word
         part: body

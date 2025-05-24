@@ -7,7 +7,7 @@ info:
   description: Unauthenticated access to Zipkin was discovered.
   reference:
     - https://zipkin.io/
-  tags: cloud,generic
+  tags: cloud,generic,config
   metadata:
     max-request: 1
 

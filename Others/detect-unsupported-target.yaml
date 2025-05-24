@@ -32,7 +32,10 @@ http:
           - "&copy; 2012"
           - "&copy; 2011"
           - "&copy; 2010"
-        condition: or
+          - "&copy; 2009"
+          - "&copy; 2008"
+          - "&copy; 2007"
+          - "&copy; 2006"
         
       - type: status
         status:
