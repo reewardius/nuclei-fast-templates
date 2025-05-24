@@ -5,7 +5,7 @@ info:
   description: This template can be used to detect Path Traversal exposed files containing sensitive information.
   author: reewardius
   severity: high
-  tags: lfi,generic
+  tags: lfi,lfr,generic
 
 http:
   - method: GET
