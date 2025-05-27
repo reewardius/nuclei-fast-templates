@@ -21,7 +21,6 @@ http:
           - "ssh-ed25519"
           - "ssh-rsa"
           - "ecdsa-sha2-nistp256"
-        condition: or
 
       - type: status
         status:
