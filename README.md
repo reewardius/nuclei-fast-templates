@@ -4,7 +4,7 @@
 ```
 katana -u root.txt -ps -f qurl -o passive.txt
 uro -i passive.txt -o dedupe.txt
-nuclei -l dedupe.txt -tags fuzzing-req -dast -t nuclei-fast-templates/
+nuclei -l dedupe.txt -tags fuzzing-req -dast -t nuclei-fast-templates/ -fuzz-param-frequency 10000
 ```
 
 If you want to scan for a specific vulnerability, replace **-tags fuzzing-req** with a tag from the list below.
