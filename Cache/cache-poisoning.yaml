@@ -25,7 +25,6 @@ http:
         Host: {{Hostname}}
         
     stop-at-first-match: true
-    req-condition: true
     matchers:
       - type: dsl
         dsl:
