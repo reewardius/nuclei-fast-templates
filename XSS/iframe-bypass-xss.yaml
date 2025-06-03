@@ -4,7 +4,7 @@ info:
   name: XSS Iframe
   author: reewardius
   severity: medium
-  tags: fuzzing-xss,fuzzing-req,dast
+  tags: fuzzing-xss,fuzzing-req,dast,fuzzing
   
 http:
   - method: GET
@@ -28,7 +28,7 @@ http:
       - type: word
         part: body
         words:
-          - '<iframe src="'
+          - '<iframe src="data:text/html;www.youtube.com/XYZ'
           
       - type: word
         part: header

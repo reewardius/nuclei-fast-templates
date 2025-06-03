@@ -42,5 +42,6 @@ http:
         words:
           - "The specified key does not exist"
           - "Code: NoSuchKey"
+          - "NUXT_DATA"
         part: body
         negative: true

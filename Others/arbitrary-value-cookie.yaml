@@ -26,6 +26,7 @@ http:
           - "{{cookie}}"
 
     stop-at-first-match: true
+    matchers-condition: and
     matchers:
       - type: word
         part: header
@@ -33,3 +34,7 @@ http:
         words:
           - "HERE; Cookie1=XXXXX; Cookie2=WWWWWWW; Cookie3=EOF"
           - "HERE;+Cookie1=XXXXX;+Cookie2=WWWWWWW;+Cookie3=EOF"
+          
+      - type: status
+        status:
+          - 200
