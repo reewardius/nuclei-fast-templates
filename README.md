@@ -38,20 +38,20 @@ nuclei -l alive_http_services.txt -etags fuzzing-req,cache,logs,backup,listing -
 
 It is better to run cache, logs and backup templates separately, as they significantly increase the scan time.
 ```bash
-nuclei -l resolved -tags cache -t nuclei-fast-templates/
+nuclei -l alive_http_services.txt -tags cache -t nuclei-fast-templates/
 ```
 
 **Backup Templates**
 ```bash
-nuclei -l resolved -tags backup -t nuclei-fast-templates/
+nuclei -l alive_http_services.txt -tags backup -t nuclei-fast-templates/
 ```
 
 **Logs Templates**
 ```bash
-nuclei -l resolved -tags logs -t nuclei-fast-templates/
+nuclei -l alive_http_services.txt -tags logs -t nuclei-fast-templates/
 ```
 
 **Listing Templates**
 ```bash
-nuclei -l resolved -tags listing -t nuclei-fast-templates/
+nuclei -l alive_http_services.txt -tags listing -t nuclei-fast-templates/
 ```
