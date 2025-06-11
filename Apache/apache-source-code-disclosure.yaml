@@ -3,7 +3,7 @@ id: apache-source-code-disclosure
 info:
   name: Disclose CGI Source Code in Apache httpd
   author: shdwpwn
-  severity: high
+  severity: info
   description: |
     This template checks if specific CGI scripts on an Apache httpd server.
   reference:

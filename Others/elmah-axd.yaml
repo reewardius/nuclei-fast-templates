@@ -23,7 +23,7 @@ http:
           - "ELMAH"
           - "Error Log for"
         part: body
-        condition: or
+        condition: and
         
       - type: word
         words:

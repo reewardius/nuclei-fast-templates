@@ -51,4 +51,5 @@ http:
         words:
           - "<title>Access Denied</title>"
           - "You don't have permission to access"
+          - "Roundcube Webmail"
         negative: true

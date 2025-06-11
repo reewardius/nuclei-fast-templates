@@ -4,7 +4,7 @@ info:
   name: Tricks to download source code for PHP built-in server on Windows.
   author: reewardius
   reference: https://t.me/c/1345592925/3463
-  severity: high
+  severity: info
   tags: php,generic
   
 http:

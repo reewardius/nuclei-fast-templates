@@ -477,11 +477,3 @@ http:
           - "PASS"
           - "HOST"
         condition: and
-        
-      - type: word
-        part: body
-        words:
-          - "env"
-          - "debug"
-          - "variable"
-        condition: and

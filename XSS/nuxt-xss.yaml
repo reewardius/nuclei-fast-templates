@@ -28,3 +28,8 @@ http:
           - "Unable to find a route to match the URI: __nuxt_component_test__"
         part: body
         negative: true
+        
+      - type: status
+        status:
+          - 404
+        negative: true
