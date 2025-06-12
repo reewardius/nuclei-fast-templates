@@ -63,12 +63,7 @@ http:
         words:
           - <div class="notfound">
           - 404 Not Found<br>.
-
-      - type: word
-        name: gemfury
-        words:
-          - "404: This page could not be found."
-
+          
       - type: word
         name: getresponse
         words:
