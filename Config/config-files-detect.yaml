@@ -9,8 +9,8 @@ info:
 http:
   - method: GET
     path:
-      - "{{BaseURL}}/._machine.config"
-      - "{{BaseURL}}/._web.config"
+      - "{{BaseURL}}/machine.config"
+      - "{{BaseURL}}/web.config"
       - "{{BaseURL}}/.azure/azure.config"
       - "{{BaseURL}}/.centurylink/api.config"
       - "{{BaseURL}}/.config"
@@ -452,28 +452,26 @@ http:
       - "{{BaseURL}}/xunit.console.exe.config"
       - "{{BaseURL}}/xunit.net.config"
       
-    matchers-condition: or
+    matchers-condition: and
     matchers:
-      - type: word
-        words:
-          - "MAIL_HOST="
-          - "MAIL_FROM_ADDRESS="
-          - "MAIL_ENCRYPTION="
-        part: body
-        
       - type: regex
         regex:
           - "(?m)^APP_(NAME|ENV|KEY|DEBUG|URL|PASSWORD|SECRET)"
           - "(?m)^DB_(HOST|NAME|DEBUG|PASSWORD|DATABASE|PASS)"
+          - "(?m)^MAIL_(HOST|NAME|DEBUG|PASSWORD|DATABASE|PASS|ENCRYPTION)"
           - "(?m)^ADMIN_(HOST|NAME|DEBUG|PASSWORD|DATABASE|PASS)"
           - "(?m)^AWS_(SESSION|LAMBDA|SECRET|REGION|ACCESS)"
           - 'jdbc:[a-z:]+://[A-Za-z0-9\.\-_:;=/@?,&]+'
-          - '((?i)password|pwd|pass|secretkey|secret_key)='
-        
+          - '((?i)database|login|user|password|pwd|pass|secret|api_key|token)='
+          
       - type: word
-        part: body
+        part: header
         words:
-          - "USER"
-          - "PASS"
-          - "HOST"
+          - "application/json"
+          - "text/html"
+        negative: true
         condition: and
+        
+      - type: status
+        status:
+          - 200
