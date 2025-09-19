@@ -1,4 +1,4 @@
-id: 0x063
+id: blind-ssrf-063
 
 info:
   name: Blind SSRF

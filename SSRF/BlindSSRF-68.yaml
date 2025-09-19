@@ -1,4 +1,4 @@
-id: 0x068
+id: blind-ssrf-068
 
 info:
   name: Blind SSRF

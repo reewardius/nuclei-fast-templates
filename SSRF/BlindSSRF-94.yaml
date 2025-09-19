@@ -1,4 +1,4 @@
-id: 0x094
+id: blind-ssrf-094
 
 info:
   name: Blind SSRF

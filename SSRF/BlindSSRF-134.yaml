@@ -1,4 +1,4 @@
-id: 0x134
+id: blind-ssrf-134
 
 info:
   name: Blind SSRF

@@ -1,4 +1,4 @@
-id: 0x153
+id: blind-ssrf-153
 
 info:
   name: Blind SSRF

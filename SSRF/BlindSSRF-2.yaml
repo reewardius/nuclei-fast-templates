@@ -1,4 +1,4 @@
-id: 0x002
+id: blind-ssrf-002
 
 info:
   name: Blind SSRF
@@ -24,4 +24,3 @@ http:
         words:
           - "dns"
           - "http"
-        condition: or

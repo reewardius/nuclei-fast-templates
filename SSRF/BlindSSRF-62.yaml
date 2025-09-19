@@ -1,4 +1,4 @@
-id: 0x062
+id: blind-ssrf-062
 
 info:
   name: Blind SSRF

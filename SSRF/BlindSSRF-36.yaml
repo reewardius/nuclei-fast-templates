@@ -1,4 +1,4 @@
-id: 0x036
+id: blind-ssrf-036
 
 info:
   name: Blind SSRF

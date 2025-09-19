@@ -1,4 +1,4 @@
-id: 0x43
+id: blind-ssrf-43
 
 info:
   name: Blind SSRF

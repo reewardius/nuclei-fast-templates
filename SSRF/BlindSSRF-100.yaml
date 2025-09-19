@@ -1,4 +1,4 @@
-id: 0100
+id: blind-ssrf-100
 
 info:
   name: Blind SSRF

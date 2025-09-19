@@ -1,4 +1,4 @@
-id: 0x138
+id: blind-ssrf-138
 
 info:
   name: Blind SSRF

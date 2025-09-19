@@ -1,4 +1,4 @@
-id: 0x174
+id: blind-ssrf-174
 
 info:
   name: Blind SSRF

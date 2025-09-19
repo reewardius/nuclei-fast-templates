@@ -1,4 +1,4 @@
-id: 0x093
+id: blind-ssrf-093
 
 info:
   name: Blind SSRF

@@ -1,4 +1,4 @@
-id: 0x118
+id: blind-ssrf-118
 
 info:
   name: Blind SSRF

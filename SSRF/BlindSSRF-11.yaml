@@ -1,4 +1,4 @@
-id: 0x011
+id: blind-ssrf-011
 
 info:
   name: Blind SSRF
@@ -17,6 +17,7 @@ http:
         Accept-Encoding: gzip, deflate
         Accept: */*
 
+    stop-at-first-match: true
     matchers:
       - type: word
         part: interactsh_protocol

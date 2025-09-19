@@ -1,4 +1,4 @@
-id: 0x055
+id: blind-ssrf-055
 
 info:
   name: Blind SSRF

@@ -1,4 +1,4 @@
-id: 0x148
+id: blind-ssrf-148
 
 info:
   name: Blind SSRF

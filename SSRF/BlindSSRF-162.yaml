@@ -1,4 +1,4 @@
-id: 0x162
+id: blind-ssrf-162
 
 info:
   name: Blind SSRF

@@ -4,7 +4,7 @@ info:
   name: GCP Detect SSRF
   author: reewardius
   reference: https://infosecwriteups.com/story-of-a-1k-bounty-ssrf-d5c4868680f5
-  severity: high
+  severity: info
   tags: ssrf,generic
   metadata:
     max-request: 3
