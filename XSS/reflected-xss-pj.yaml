@@ -21,7 +21,7 @@ http:
     fuzzing:
       - part: query
         type: postfix
-        mode: multiple
+        mode: single
         fuzz:
           - "{{reflection}}"
 

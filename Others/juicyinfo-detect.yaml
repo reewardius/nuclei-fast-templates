@@ -64,4 +64,3 @@ http:
           - '(?i)https?://[^\s<>"]+\.(zip|rar|7z|tar|gz|bz2|backup|bak|sql|dump)'
           - '(?i)https?://[^\s<>"]+\.(json|xml|yml|yaml|conf|config|ini|env)'
           - '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
-          - '\b(?:[0-9]{1,3}\.){3}[0-9]{1,3}\b'

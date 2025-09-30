@@ -29,7 +29,7 @@ http:
     fuzzing:
       - part: query
         type: replace
-        mode: multiple
+        mode: single
         fuzz:
           - "{{url_encode(xss_payloads)}}"
           - "{{url_encode(url_encode(xss_payloads))}}"
@@ -50,3 +50,11 @@ http:
         part: header
         words:
           - "text/html"
+          
+      - type: word
+        part: body
+        words:
+          - "<title>Access Denied</title>"
+          - "You don't have permission to access"
+          - "Roundcube Webmail"
+        negative: true

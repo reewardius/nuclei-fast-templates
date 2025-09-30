@@ -18,7 +18,7 @@ http:
         
     fuzzing:
       - part: query
-        mode: multiple
+        mode: single
         type: replace
         fuzz:
           - "{{xss}}"
@@ -33,4 +33,12 @@ http:
       - type: word
         part: header
         words:
-          - text/html
+          - "text/html"
+          
+      - type: word
+        part: body
+        words:
+          - "<title>Access Denied</title>"
+          - "You don't have permission to access"
+          - "Roundcube Webmail"
+        negative: true

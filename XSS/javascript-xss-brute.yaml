@@ -77,7 +77,7 @@ http:
         
     fuzzing:
       - part: query
-        mode: multiple
+        mode: single
         type: replace
         fuzz:
           - "{{xss}}"
@@ -100,7 +100,6 @@ http:
           - '<a href=javascript:void(0)'
           - '<a href="javascript:void(0)'
           - 'javascript:window.location.href'
-        condition: or
 
       - type: word
         part: body
@@ -116,11 +115,9 @@ http:
           - <form action="javascript:top[/al/.source+/ert/.source](document.cookie)
           - <a href="javascript:alert('{{randstr}}')
           - <a href="javascript:top[/al/.source+/ert/.source](document.cookie)
-        condition: or
 
       - type: word
         part: interactsh_protocol 
         words:
           - "http"
           - "dns"
-        condition: or

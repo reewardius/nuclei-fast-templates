@@ -20,7 +20,7 @@ http:
         
     fuzzing:
       - part: query
-        mode: multiple
+        mode: single
         fuzz:
           - "{{xss}}"
           
@@ -34,7 +34,6 @@ http:
           - "<svg/onload=alert(1)>"
           - "onerror=alert(1)"
           - "javascript:alert(1)"
-        condition: or
         
       - type: word
         part: header

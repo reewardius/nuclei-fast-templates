@@ -17,7 +17,7 @@ http:
 
     fuzzing:
       - part: query
-        mode: multiple
+        mode: single
         keys:
           - AuthState
           - URL
