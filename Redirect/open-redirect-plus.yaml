@@ -15,8 +15,8 @@ http:
         
     payloads:
       redirect:
-        - '$2f%2fevil.com%2f%2f'
         - '#/https://evil.com/'
+        - '$2f%2fevil.com%2f%2f'
         - '$2f%2fevil.com'
         - '%00/evil.com/'
         - '%01https://evil.com'
@@ -105,6 +105,8 @@ http:
         - '//\@evil.com'
         - '//\evil.com'
         - '//\tevil.com/'
+        - '//evil%00.com'
+        - '//evil%E3%80%82com'
         - '//evil.com'
         - '//evil.com/%2E%2E'
         - '//evil.com/%2F.. '
@@ -123,8 +125,6 @@ http:
         - '//evil.com\@{{Host}}'
         - '//evil.com\tevil.com/'
         - '//evil.com\t{{Host}}/'
-        - '//evil%00.com'
-        - '//evil%E3%80%82com'
         - '//https:///evil.com/%2e%2e'
         - '//https://evil.com/%2e%2e%2f'
         - '//https://evil.com//'
@@ -143,8 +143,8 @@ http:
         - '/\/\/evil.com/'
         - '/\/evil.com'
         - '/\/evil.com/'
-        - '/\evil.com'
         - '/\evil%252ecom'
+        - '/\evil.com'
         - '/\{{Host}}:80%40evil.com'
         - '/evil.com'
         - '/evil.com/%2F.. '
@@ -189,6 +189,8 @@ http:
         - '@https://www.evil.com'
         - '@{{Host}}.evil.com/'
         - '\/\/evil.com/'
+        - 'evil%252ecom'
+        - 'evil%E3%80%82com'
         - 'evil.com%00'
         - 'evil.com%23@{{Host}}'
         - 'evil.com%253f%3b/1.bp.blogspot.com/'
@@ -198,8 +200,7 @@ http:
         - 'evil.com//'
         - 'evil.com/{{Host}}'
         - 'evil.com;@'
-        - 'evil%252ecom'
-        - 'evil%E3%80%82com'
+        - 'g/r/https://evil.com'
         - 'http:%0a%0devil.com'
         - 'http://.evil.com'
         - 'http://3H6k7lIAiqjfNeN@{{Host}}+@evil.com/'
@@ -291,6 +292,7 @@ http:
         - 'https:/\evil.com'
         - 'https:/evil.com'
         - 'https:evil.com'
+        - 'r/https://evil.com'
         - '{{Host}}.evil.com'
         - '{{Host}}.evil.com/'
         - '{{Host}};@evil.com'
@@ -302,6 +304,8 @@ http:
         - 'ｰevil.com'
         
     stop-at-first-match: true
+    redirects: true
+    max-redirects: 3
     matchers-condition: and
     matchers:
       - type: regex
