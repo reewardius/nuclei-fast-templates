@@ -324,6 +324,8 @@ http:
           - "{{redirect}}"
           
     stop-at-first-match: true
+    redirects: true
+    max-redirects: 3
     matchers-condition: and
     matchers:
       - type: regex

@@ -21,6 +21,8 @@ http:
       - "{{BaseURL}}/gotoURL.asp?url=interact.sh&id=43569"
       
     stop-at-first-match: true
+    redirects: true
+    max-redirects: 3
     matchers:
       - type: regex
         part: header
