@@ -293,6 +293,8 @@ http:
         - 'https:/evil.com'
         - 'https:evil.com'
         - 'r/https://evil.com'
+        - 'redirect/https://evil.com'
+        - 'redir/https://evil.com'
         - '{{Host}}.evil.com'
         - '{{Host}}.evil.com/'
         - '{{Host}};@evil.com'
