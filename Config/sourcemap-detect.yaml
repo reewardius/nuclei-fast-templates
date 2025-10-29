@@ -1,0 +1,23 @@
+id: sourcemap-detect
+
+info:
+  name: SourceMap Detector
+  author: reewardius
+  severity: info
+  tags: exposure
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+      
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "sourceMappingURL="
+
+      - type: status
+        status:
+          - 200
