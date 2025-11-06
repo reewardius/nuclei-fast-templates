@@ -25,13 +25,13 @@ http:
           - "cd"
           - "cat"
           - "ls"
-        condition: or
         
       - type: word
         part: body
         negative: true
         words:
           - "404 - File or directory not found."
+          - "Not allowed HTML content"
           
       - type: word
         part: header
@@ -40,10 +40,8 @@ http:
           - "octet-stream"
           - "application/x-sh"
           - "application/x-shellscript"
-        condition: or
         
       - type: status
         status:
           - 200
           - 206
-        condition: or
