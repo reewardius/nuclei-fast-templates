@@ -46,9 +46,23 @@ http:
         fuzz:
           - "{{oob_payloads}}"
           
+    stop-at-first-match: true
+    matchers-condition: and
     matchers:
       - type: word
         part: interactsh_protocol
         words:
-          - "http"
           - "dns"
+          - "http"
+
+      - type: regex
+        part: interactsh_request
+        regex:
+          - '([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
+
+    extractors:
+      - type: regex
+        part: interactsh_request
+        group: 1
+        regex:
+          - '([a-zA-Z0-9\.\-]+)\.([a-z0-9]+)\.([a-z0-9]+)\.\w+'
