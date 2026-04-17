@@ -1,0 +1,169 @@
+id: sqli-error-based-detection-multipart
+info:
+  name: SQL Injection Error Based — Multipart Form
+  author: reewardius
+  severity: high
+  description: Detects SQL injection via error messages in multipart form endpoints
+  tags: sqli,injection,multipart
+
+http:
+  # Вариант 1: login + password
+  - method: POST
+    path:
+      - "{{BaseURL}}"
+      - "{{BaseURL}}/api/auth"
+      - "{{BaseURL}}/api/auth/login"
+      - "{{BaseURL}}/api/login"
+      - "{{BaseURL}}/api/sign-in"
+      - "{{BaseURL}}/api/sigin"
+      - "{{BaseURL}}/api/v1/login"
+      - "{{BaseURL}}/api/v2/login"
+      - "{{BaseURL}}/api/v3/login"
+      - "{{BaseURL}}/api/v1/auth"
+      - "{{BaseURL}}/api/v2/auth"
+      - "{{BaseURL}}/api/v3/auth"
+      - "{{BaseURL}}/auth/login"
+      - "{{BaseURL}}/login"
+      - "{{BaseURL}}/sign-in"
+      - "{{BaseURL}}/signin"
+    headers:
+      Content-Type: "multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxk"
+    body: |
+      ------WebKitFormBoundary7MA4YWxk
+      Content-Disposition: form-data; name="login"
+
+      {{injection_payload}}
+      ------WebKitFormBoundary7MA4YWxk
+      Content-Disposition: form-data; name="password"
+
+      test123
+      ------WebKitFormBoundary7MA4YWxk--
+    payloads:
+      injection_payload:
+        - "'"
+        - "''"
+        - "' OR '1'='1"
+        - "' OR 1=1--"
+        - "'; SELECT 1--"
+    matchers-condition: or
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "SQL error code"
+          - "Dynamic SQL Error"
+          - "Token unknown"
+          - "syntax error"
+          - "mysql_fetch"
+          - "ORA-00933"
+          - "pg_query()"
+        condition: or
+
+  # Вариант 2: email + pass
+  - method: POST
+    path:
+      - "{{BaseURL}}"
+      - "{{BaseURL}}/api/auth"
+      - "{{BaseURL}}/api/auth/login"
+      - "{{BaseURL}}/api/login"
+      - "{{BaseURL}}/api/sign-in"
+      - "{{BaseURL}}/api/sigin"
+      - "{{BaseURL}}/api/v1/login"
+      - "{{BaseURL}}/api/v2/login"
+      - "{{BaseURL}}/api/v3/login"
+      - "{{BaseURL}}/api/v1/auth"
+      - "{{BaseURL}}/api/v2/auth"
+      - "{{BaseURL}}/api/v3/auth"
+      - "{{BaseURL}}/auth/login"
+      - "{{BaseURL}}/login"
+      - "{{BaseURL}}/sign-in"
+      - "{{BaseURL}}/signin"
+    headers:
+      Content-Type: "multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxk"
+    body: |
+      ------WebKitFormBoundary7MA4YWxk
+      Content-Disposition: form-data; name="email"
+
+      {{injection_payload}}
+      ------WebKitFormBoundary7MA4YWxk
+      Content-Disposition: form-data; name="pass"
+
+      test123
+      ------WebKitFormBoundary7MA4YWxk--
+    payloads:
+      injection_payload:
+        - "'"
+        - "''"
+        - "' OR '1'='1"
+        - "' OR 1=1--"
+        - "'; SELECT 1--"
+    matchers-condition: or
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "SQL error code"
+          - "Dynamic SQL Error"
+          - "Token unknown"
+          - "syntax error"
+          - "mysql_fetch"
+          - "ORA-00933"
+          - "pg_query()"
+        condition: or
+
+  # Вариант 3: username + passwd (с file-полем для реалистичности)
+  - method: POST
+    path:
+      - "{{BaseURL}}"
+      - "{{BaseURL}}/api/auth"
+      - "{{BaseURL}}/api/auth/login"
+      - "{{BaseURL}}/api/login"
+      - "{{BaseURL}}/api/sign-in"
+      - "{{BaseURL}}/api/sigin"
+      - "{{BaseURL}}/api/v1/login"
+      - "{{BaseURL}}/api/v2/login"
+      - "{{BaseURL}}/api/v3/login"
+      - "{{BaseURL}}/api/v1/auth"
+      - "{{BaseURL}}/api/v2/auth"
+      - "{{BaseURL}}/api/v3/auth"
+      - "{{BaseURL}}/auth/login"
+      - "{{BaseURL}}/login"
+      - "{{BaseURL}}/sign-in"
+      - "{{BaseURL}}/signin"
+    headers:
+      Content-Type: "multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxk"
+    body: |
+      ------WebKitFormBoundary7MA4YWxk
+      Content-Disposition: form-data; name="username"
+
+      {{injection_payload}}
+      ------WebKitFormBoundary7MA4YWxk
+      Content-Disposition: form-data; name="passwd"
+
+      test123
+      ------WebKitFormBoundary7MA4YWxk
+      Content-Disposition: form-data; name="file"; filename="test.txt"
+      Content-Type: text/plain
+
+      dummycontent
+      ------WebKitFormBoundary7MA4YWxk--
+    payloads:
+      injection_payload:
+        - "'"
+        - "''"
+        - "' OR '1'='1"
+        - "' OR 1=1--"
+        - "'; SELECT 1--"
+    matchers-condition: or
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "SQL error code"
+          - "Dynamic SQL Error"
+          - "Token unknown"
+          - "syntax error"
+          - "mysql_fetch"
+          - "ORA-00933"
+          - "pg_query()"
+        condition: or

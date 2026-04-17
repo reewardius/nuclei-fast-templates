@@ -1,0 +1,202 @@
+id: sqli-error-based-detection-json
+info:
+  name: SQL Injection Error Based Detection
+  author: reewardius
+  severity: high
+  description: Detects SQL injection via error messages
+  tags: sqli,injection,json
+http:
+  - method: POST
+    path:
+      - "{{BaseURL}}"
+      - "{{BaseURL}}/api/auth"
+      - "{{BaseURL}}/api/auth/login"
+      - "{{BaseURL}}/api/login"
+      - "{{BaseURL}}/api/sign-in"
+      - "{{BaseURL}}/api/sigin"
+      - "{{BaseURL}}/api/v1/login"
+      - "{{BaseURL}}/api/v2/login"
+      - "{{BaseURL}}/api/v3/login"
+      - "{{BaseURL}}/api/v1/auth"
+      - "{{BaseURL}}/api/v2/auth"
+      - "{{BaseURL}}/api/v3/auth"
+      - "{{BaseURL}}/auth/login"
+      - "{{BaseURL}}/login"
+      - "{{BaseURL}}/sign-in"
+      - "{{BaseURL}}/signin"
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    body: '{"login":"{{injection_payload}}","password":"test"}'
+    payloads:
+      injection_payload:
+        - "'"
+        - '"'
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "SQL error code"
+          - "Dynamic SQL Error"
+          - "Token unknown"
+          - "syntax error"
+          - "mysql_fetch"
+          - "ORA-00933"
+          - "pg_query()"
+        condition: or
+
+  - method: POST
+    path:
+      - "{{BaseURL}}"
+      - "{{BaseURL}}/api/auth"
+      - "{{BaseURL}}/api/auth/login"
+      - "{{BaseURL}}/api/login"
+      - "{{BaseURL}}/api/sign-in"
+      - "{{BaseURL}}/api/sigin"
+      - "{{BaseURL}}/api/v1/login"
+      - "{{BaseURL}}/api/v2/login"
+      - "{{BaseURL}}/api/v3/login"
+      - "{{BaseURL}}/api/v1/auth"
+      - "{{BaseURL}}/api/v2/auth"
+      - "{{BaseURL}}/api/v3/auth"
+      - "{{BaseURL}}/auth/login"
+      - "{{BaseURL}}/login"
+      - "{{BaseURL}}/sign-in"
+      - "{{BaseURL}}/signin"
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    body: '{"email":"{{injection_payload}}","password":"test"}'
+    payloads:
+      injection_payload:
+        - "'"
+        - '"'
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "SQL error code"
+          - "Dynamic SQL Error"
+          - "Token unknown"
+          - "syntax error"
+          - "mysql_fetch"
+          - "ORA-00933"
+          - "pg_query()"
+        condition: or
+        
+  - method: POST
+    path:
+      - "{{BaseURL}}"
+      - "{{BaseURL}}/api/auth"
+      - "{{BaseURL}}/api/auth/login"
+      - "{{BaseURL}}/api/login"
+      - "{{BaseURL}}/api/sign-in"
+      - "{{BaseURL}}/api/sigin"
+      - "{{BaseURL}}/api/v1/login"
+      - "{{BaseURL}}/api/v2/login"
+      - "{{BaseURL}}/api/v3/login"
+      - "{{BaseURL}}/api/v1/auth"
+      - "{{BaseURL}}/api/v2/auth"
+      - "{{BaseURL}}/api/v3/auth"
+      - "{{BaseURL}}/auth/login"
+      - "{{BaseURL}}/login"
+      - "{{BaseURL}}/sign-in"
+      - "{{BaseURL}}/signin"
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    body: '{"username":"{{injection_payload}}","password":"test"}'
+    payloads:
+      injection_payload:
+        - "'"
+        - '"'
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "SQL error code"
+          - "Dynamic SQL Error"
+          - "Token unknown"
+          - "syntax error"
+          - "mysql_fetch"
+          - "ORA-00933"
+          - "pg_query()"
+        condition: or
+        
+  - method: POST
+    path:
+      - "{{BaseURL}}"
+      - "{{BaseURL}}/api/auth"
+      - "{{BaseURL}}/api/auth/login"
+      - "{{BaseURL}}/api/login"
+      - "{{BaseURL}}/api/sign-in"
+      - "{{BaseURL}}/api/sigin"
+      - "{{BaseURL}}/api/v1/login"
+      - "{{BaseURL}}/api/v2/login"
+      - "{{BaseURL}}/api/v3/login"
+      - "{{BaseURL}}/api/v1/auth"
+      - "{{BaseURL}}/api/v2/auth"
+      - "{{BaseURL}}/api/v3/auth"
+      - "{{BaseURL}}/auth/login"
+      - "{{BaseURL}}/login"
+      - "{{BaseURL}}/sign-in"
+      - "{{BaseURL}}/signin"
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    body: '{"user":"{{injection_payload}}","password":"test"}'
+    payloads:
+      injection_payload:
+        - "'"
+        - '"'
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "SQL error code"
+          - "Dynamic SQL Error"
+          - "Token unknown"
+          - "syntax error"
+          - "mysql_fetch"
+          - "ORA-00933"
+          - "pg_query()"
+        condition: or
+        
+  - method: POST
+    path:
+      - "{{BaseURL}}"
+      - "{{BaseURL}}/api/auth"
+      - "{{BaseURL}}/api/auth/login"
+      - "{{BaseURL}}/api/login"
+      - "{{BaseURL}}/api/sign-in"
+      - "{{BaseURL}}/api/sigin"
+      - "{{BaseURL}}/api/v1/login"
+      - "{{BaseURL}}/api/v2/login"
+      - "{{BaseURL}}/api/v3/login"
+      - "{{BaseURL}}/api/v1/auth"
+      - "{{BaseURL}}/api/v2/auth"
+      - "{{BaseURL}}/api/v3/auth"
+      - "{{BaseURL}}/auth/login"
+      - "{{BaseURL}}/login"
+      - "{{BaseURL}}/sign-in"
+      - "{{BaseURL}}/signin"
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    body: '{"user":"{{injection_payload}}","pass":"test"}'
+    payloads:
+      injection_payload:
+        - "'"
+        - '"'
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "SQL error code"
+          - "Dynamic SQL Error"
+          - "Token unknown"
+          - "syntax error"
+          - "mysql_fetch"
+          - "ORA-00933"
+          - "pg_query()"
+        condition: or
