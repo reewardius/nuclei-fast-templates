@@ -2,7 +2,7 @@ id: lodash-perf-test-html-xss-headless
 
 info:
   name: Lodash perf/test HTML - DOM XSS via query build/other/loader
-  author: local
+  author: Van-1337
   severity: medium
   description: |
     Confirms DOM XSS in lodash perf/index.html and test/index.html. perf-ui.js /

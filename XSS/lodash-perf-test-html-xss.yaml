@@ -2,7 +2,7 @@ id: lodash-perf-test-html-xss
 
 info:
   name: Lodash perf/test HTML - Exposed DOM XSS sink
-  author: local
+  author: Van-1337
   severity: medium
   description: |
     Detects lodash browser perf and test pages that read build/other/loader from
