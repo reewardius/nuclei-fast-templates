@@ -1,0 +1,95 @@
+id: lodash-perf-test-html-xss
+
+info:
+  name: Lodash perf/test HTML - Exposed DOM XSS sink
+  author: Van-1337
+  severity: medium
+  description: |
+    Detects lodash browser perf and test pages that read build/other/loader from
+    the URL query string and pass them into document.write as script src without
+    encoding. Opening a crafted URL (for example
+    perf/index.html?build="></script><script>alert(1)</script>) executes script
+    in the page origin. There is no CVE on lodash; the pages are still present
+    in GitHub 4.17.21 / 4.18.1 / main. npm tarballs usually omit them — they
+    show up when a git/bower/vendor copy is served from the web root.
+  impact: |
+    Anyone who can lure a user to the exposed page can run JavaScript in that origin.
+  remediation: |
+    Do not deploy lodash perf/, test/, or vendor/ trees to the web root. Serve only
+    the dist library file. Lodash PR 6230 (unmerged) only blocks absolute URLs and
+    does not stop HTML breakout in document.write.
+  reference:
+    - https://github.com/lodash/lodash/blob/4.17.21/perf/index.html
+    - https://github.com/lodash/lodash/blob/4.17.21/perf/asset/perf-ui.js
+    - https://github.com/lodash/lodash/blob/4.17.21/test/index.html
+    - https://github.com/lodash/lodash/blob/4.17.21/test/asset/test-ui.js
+    - https://github.com/lodash/lodash/pull/6230
+    - https://hackerone.com/reports/248560
+    - https://nvd.nist.gov/vuln/detail/CVE-2020-10790
+  classification:
+    cwe-id: CWE-79
+  metadata:
+    verified: true
+    max-request: 21
+    shodan-query: html:"lodash Performance Suite"
+    fofa-query: body="lodash Performance Suite"
+  tags: xss,dom-xss,lodash,vuln
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}{{page}}"
+
+    payloads:
+      page:
+        - "/perf/index.html"
+        - "/perf/"
+        - "/lodash/perf/index.html"
+        - "/lodash/perf/"
+        - "/bower_components/lodash/perf/index.html"
+        - "/bower_components/lodash/perf/"
+        - "/assets/bower_components/lodash/perf/index.html"
+        - "/assets/bower_components/lodash/perf/"
+        - "/js/vendor/lodash/perf/index.html"
+        - "/js/vendor/lodash/perf/"
+        - "/vendor/lodash/perf/index.html"
+        - "/node_modules/lodash/perf/index.html"
+        - "/test/index.html"
+        - "/lodash/test/index.html"
+        - "/bower_components/lodash/test/index.html"
+        - "/assets/bower_components/lodash/test/index.html"
+        - "/js/vendor/lodash/test/index.html"
+        - "/vendor/lodash/test/index.html"
+        - "/node_modules/lodash/test/index.html"
+        - "/test/backbone.html"
+        - "/test/underscore.html"
+
+    stop-at-first-match: true
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "lodash Performance Suite"
+          - "lodash Test Suite"
+        condition: or
+
+      - type: word
+        part: body
+        words:
+          - "ui.buildPath"
+
+      - type: word
+        part: body
+        words:
+          - "document.write"
+
+      - type: word
+        part: header
+        words:
+          - "text/html"
+
+      - type: status
+        status:
+          - 200
